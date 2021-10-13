@@ -1,0 +1,73 @@
+@charset "UTF-8";
+/* font */
+@font-face { font-family: "NotoSans"; font-style: normal; font-weight: 300; src: url("/thetastable/resource/font/NotoSansCJKkr-Light.woff2") format("woff2"), url("/thetastable/resource/font/NotoSansCJKkr-Light.woff") format("woff"); }
+
+@font-face { font-family: "NotoSans"; font-style: normal; font-weight: 400; src: url("/thetastable/resource/font/NotoSansCJKkr-Regular.woff2") format("woff2"), url("/thetastable/resource/font/NotoSansCJKkr-Regular.woff") format("woff"); }
+
+@font-face { font-family: "NotoSans"; font-style: normal; font-weight: 600; src: url("/thetastable/resource/font/NotoSansCJKkr-Medium.woff2") format("woff2"), url("/thetastable/resource/font/NotoSansCJKkr-Medium.woff") format("woff"); }
+
+@font-face { font-family: "NotoSans"; font-style: normal; font-weight: 700; src: url("/thetastable/resource/font/NotoSansCJKkr-Bold.woff2") format("woff2"), url("/thetastable/resource/font/NotoSansCJKkr-Bold.woff") format("woff"); }
+
+@font-face { font-family: "HanwhaWeb"; font-style: normal; font-weight: 400; src: url("/thetastable/resource/font/Hanwha-Light.woff2") format("woff2"), url("/resource/fonts/Hanwha-Light.woff") format("woff"); }
+
+@font-face { font-family: "HanwhaWeb"; font-style: normal; font-weight: 600; src: url("/thetastable/resource/font/Hanwha-Bold.woff2") format("woff2"), url("/resource/fonts/Hanwha-Bold.woff") format("woff"); }
+
+@font-face { font-family: "HanwhaWeb"; font-style: normal; font-weight: 700; src: url("/thetastable/resource/font/Hanwha-Bold.woff2") format("woff2"), url("/resource/fonts/Hanwha-Bold.woff") format("woff"); }
+
+/* reset */
+html, body, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td, form, fieldset, legend, input, textarea, button, select { padding: 0; margin: 0; }
+
+body { font-family: "NotoSans", "돋움", Dotum, "굴림", Gulim, Helvetica, sans-serif; color: #666; font-weight: 400; line-height: 1; -webkit-text-size-adjust: none; -ms-overflow-x: hidden; word-break: keep-all; }
+
+html, body { font-size: 16px; }
+
+h1, h2, h3, h4, h5, h6, strong { font-size: 100%; line-height: 1; }
+
+select, button, input, textarea { font-family: "NotoSans", "돋움", Dotum, "굴림", Gulim, Helvetica, sans-serif; font-size: 16px; color: #666; }
+
+fieldset, img, button { border: 0; }
+
+img, input, button { vertical-align: top; }
+
+table { table-layout: fixed; width: 100%; border-collapse: collapse; border-spacing: 0; word-break: break-all; word-wrap: break-word; }
+
+address, em { font-style: normal; }
+
+ol, ul, li { list-style: none; }
+
+hr { display: none; }
+
+a { text-decoration: none; color: inherit; }
+
+a:hover, a:active { text-decoration: none; }
+
+legend { position: absolute; left: -9999px; top: 0; }
+
+caption { overflow: hidden; width: 0; height: 0; font-size: 0; line-height: 0; }
+
+button { background: none; cursor: pointer; -webkit-apperance: none; }
+
+button::-moz-focus-inner { padding: 0; border: 0; }
+
+textarea { resize: none; }
+
+:focus { outline: 0; }
+
+* { -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+.blind { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }
+
+.ir { overflow: hidden; position: absolute; width: 0; height: 0; line-height: 0; text-indent: -9999px; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: #999; }
+
+input::-moz-placeholder, textarea::-moz-placeholder { color: #999; }
+
+input:-ms-input-placeholder, textarea:-ms-input-placeholder { color: #999; }
+
+input::-ms-input-placeholder, textarea::-ms-input-placeholder { color: #999; }
+
+input::placeholder, textarea::placeholder { color: #999; }

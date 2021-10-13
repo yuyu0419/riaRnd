@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/thetastable/resource/css/index.css">
+</head>
+<body>
+    <div class="wrap">
+        <div class="header">
+            <div class="header_wrap">
+                <div class="header_inner">
+                    <div class="gnb_bg"></div>
+                    <h1 class="logo"><a href="javascript:void(0);"><span class="ir">더테이스터블</span></a></h1>
+                    <div class="gnb" id="gnb">
+                        <ul>
+                            <li class="depth_wrap">
+                                <a href="javascript:void(0);" class="depth1">Company</a>
+                                <ul class="depth2_wrap" style="display: none;">
+                                    <li><a href="javascript:void(0);" >슬로건</a></li>
+                                    <li><a href="javascript:void(0);">비전</a></li>
+                                    <li><a href="javascript:void(0);">걸어온길</a></li>
+                                    <li><a href="javascript:void(0);">CI</a></li>
+                                </ul>
+                            </li>
+                            <li class="depth_wrap">
+                                <a href="javascript:void(0);" class="depth1">Business</a>
+                                <ul class="depth2_wrap" style="display: none;">
+                                    <li><a href="javascript:void(0);">fine-dining</a></li>
+                                    <li><a href="javascript:void(0);">O2O</a></li>
+                                    <li><a href="javascript:void(0);">consession</a></li>
+                                </ul>
+                            </li>
+                            <li class="depth_wrap">
+                                <a href="javascript:void(0);" class="depth1">Brand</a>
+                                <ul class="depth2_wrap" style="display: none;">
+                                    <li><a href="javascript:void(0);">63레스토랑</a></li>
+                                    <li><a href="javascript:void(0);">63컨벤션</a></li>
+                                    <li><a href="javascript:void(0);">플라자 웨딩</a></li>
+                                    <li><a href="javascript:void(0);">도원스타일</a></li>
+                                    <li><a href="javascript:void(0);">티원</a></li>
+                                    <li><a href="javascript:void(0);">백리향스타일</a></li>
+                                    <li><a href="javascript:void(0);">63다이닝키트</a></li>
+                                </ul>
+                            </li>
+                            <li class="depth_wrap">
+                                <a href="javascript:void(0);" class="depth1">Recruit</a>
+                                <ul class="depth2_wrap" style="display: none;">
+                                    <li><a href="javascript:void(0);">인재상</a></li>
+                                    <li><a href="javascript:void(0);">복리후생</a></li>
+                                    <li><a href="javascript:void(0);">채용정보</a></li>
+                                </ul>
+                            </li>
+                            <li class="depth_wrap">
+                                <a href="javascript:void(0);" class="depth1">Customer Center</a>
+                                <ul class="depth2_wrap" style="display: none;">
+                                    <li><a href="javascript:void(0);">고객의소리</a></li>
+                                    <li><a href="javascript:void(0);">입점문의</a></li>
+                                    <li><a href="javascript:void(0);">경영정보</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="util">
+                        <div class="search_wrap">
+                            <input type="text" id="search">
+                            <button type="button" class="btn btn_search"><span class="ir">검색</span></button>
+                        </div>
+                        <div class="burger">
+                            <button type="button" class="btn btn_burger">
+                                <span class="line first"></span>
+                                <span class="menu_txt"></span>
+                                <span class="line last"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+
+            <div class="all_menu" id="allMenu" style="display: none;">
+                <div class="all_gnb">
+                    <ul>
+                        <li class="depth_wrap">
+                            <a href="javascript:void(0);" class="depth1">Company</a>
+                            <ul class="depth2_wrap" style="display: none;">
+                                <li><a href="javascript:void(0);" >슬로건</a></li>
+                                <li><a href="javascript:void(0);">비전</a></li>
+                                <li><a href="javascript:void(0);">걸어온길</a></li>
+                                <li><a href="javascript:void(0);">CI</a></li>
+                            </ul>
+                        </li>
+                        <li class="depth_wrap">
+                            <a href="javascript:void(0);" class="depth1">Business</a>
+                            <ul class="depth2_wrap" style="display: none;">
+                                <li><a href="javascript:void(0);">fine-dining</a></li>
+                                <li><a href="javascript:void(0);">O2O</a></li>
+                                <li><a href="javascript:void(0);">consession</a></li>
+                            </ul>
+                        </li>
+                        <li class="depth_wrap">
+                            <a href="javascript:void(0);" class="depth1">Brand</a>
+                            <ul class="depth2_wrap" style="display: none;">
+                                <li><a href="javascript:void(0);">63레스토랑</a></li>
+                                <li><a href="javascript:void(0);">63컨벤션</a></li>
+                                <li><a href="javascript:void(0);">플라자 웨딩</a></li>
+                                <li><a href="javascript:void(0);">도원스타일</a></li>
+                                <li><a href="javascript:void(0);">티원</a></li>
+                                <li><a href="javascript:void(0);">백리향스타일</a></li>
+                                <li><a href="javascript:void(0);">63다이닝키트</a></li>
+                            </ul>
+                        </li>
+                        <li class="depth_wrap">
+                            <a href="javascript:void(0);" class="depth1">Recruit</a>
+                            <ul class="depth2_wrap" style="display: none;">
+                                <li><a href="javascript:void(0);">인재상</a></li>
+                                <li><a href="javascript:void(0);">복리후생</a></li>
+                                <li><a href="javascript:void(0);">채용정보</a></li>
+                            </ul>
+                        </li>
+                        <li class="depth_wrap ">
+                            <a href="javascript:void(0);" class="depth1">Customer Center</a>
+                            <ul class="depth2_wrap" style="display: none;">
+                                <li><a href="javascript:void(0);">고객의소리</a></li>
+                                <li><a href="javascript:void(0);">입점문의</a></li>
+                                <li><a href="javascript:void(0);">경영정보</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="right_sect">
+            <div class="right_inner">
+                <a href="javascript:void(0);" class="lang">ENG+</a>
+                <div class="family_site">
+                    <ul style="display: none;">
+                        <li><a href="javascript:void(0);">한화그룹</a></li>
+                        <li><a href="javascript:void(0);">한화호텔앤드리조트</a></li>
+                        <li><a href="javascript:void(0);">한화리조트</a></li>
+                        <li><a href="javascript:void(0);">더플라자 호텔</a></li>
+                        <li><a href="javascript:void(0);">아쿠아플라넷</a></li>
+                        <li><a href="javascript:void(0);">티원/도원스타일</a></li>
+                        <li><a href="javascript:void(0);">63레스토랑</a></li>
+                        <li><a href="javascript:void(0);">63컨벤션</a></li>
+                        <li><a href="javascript:void(0);">플라자웨딩</a></li>
+                    </ul>
+                    <span>
+                        <button type="button">Family Site +</button>
+                    </span>
+                </div>
+                <div class="scroll">
+                    <span class="scroll_icon"></span>
+                    Scroll to Explore
+                </div>
+                <div class="btn_top">
+                    <a href="javascript:void(0);">TOP</a>
+                </div>
+            </div>
+        </div>
+        <div class="indigater">
+            <ul>
+                <li class="active">
+                    <a href="javascript:void(0);">
+                        <span class="ir">첫번째 섹션</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+                        <span class="ir">두번째 섹션</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+                        <span class="ir">세번째 섹션</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+                        <span class="ir">네번째 섹션</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+                        <span class="ir">다섯번째 섹션</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        
+        
+        <div class="main_wrap">
+            <div class="container">
+                <div class="sect sect_01 active">
+                    <div class="vdo_area" style="height:100vh;">
+                        <video src="/thetastable/resource/img/mov_new.mp4" muted autoplay loop></video>
+                    </div>
+                    <div class="txt_area">
+                        <div class="inner">
+                            <h2>음식, 문화, 그리고 사람을<br/>연결합니다.</h2>
+                            <p>Connectiong Food, culture, and People</p>
+                        </div>
+                    </div>
+                    <span class="indi_txt">Connecting</span>
+                </div>
+                <div class="sect sect_02">
+                    <div class="business_area">
+                        <ul>
+                            <li class="section2_1">
+                                <div class="bg">
+                                    <div class="txt txt_front">
+                                        <h2 class="icon_section2_1">
+                                            Fine-Dining
+                                            <em>외식 산업</em>
+                                        </h2>
+                                    </div>
+                                    <div class="txt txt_back">
+                                        <h2 class="icon_section2_1">
+                                            Fine-Dining
+                                            <em>외식 산업</em>
+                                        </h2>
+                                        <p>고객 한분 한분의 높은 가치에<br/>맞는 음식과 공간을 제공</p>
+                                        <a href="javascript:void(0);" class="btn_more">자세히 보기</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="section2_2">
+                                <div class="bg">
+                                    <div class="txt txt_front">
+                                        <h2 class="icon_section2_2">
+                                            O2O
+                                            <em>온라인 투 오프라인 사업</em>
+                                        </h2>
+                                    </div>
+                                    <div class="txt txt_back">
+                                        <h2 class="icon_section2_2">
+                                            O2O
+                                            <em>온라인 투 오프라인 사업</em>
+                                        </h2>
+                                        <p>온라인을 통해 접한 고객님들이 다시<br/>당사 오프라인 매장에 재방문하는 라이프스타일</p>
+                                        <a href="javascript:void(0);" class="btn_more">자세히 보기</a>
+                                    </div> 
+                                </div>
+                            </li>
+                            <li class="section2_3">
+                                <div class="bg">
+                                    <div class="txt txt_front">
+                                        <h2 class="icon_section2_3">
+                                            Concession
+                                            <em>컨세션사업</em>
+                                        </h2>
+                                    </div>
+                                    <div class="txt txt_back">
+                                        <h2 class="icon_section2_3">
+                                            Concession
+                                            <em>컨세션사업</em>
+                                        </h2>
+                                        <p>다중복합시설과 골프장 같은<br/>레저시설 내 식음 사업권을 위탁</p>
+                                        <a href="javascript:void(0);" class="btn_more">자세히 보기</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <span class="indi_txt">Business</span>
+                </div>
+                <div class="sect sect_03">
+                    <div class="about_area">
+                        <div class="inner">
+                            <div class="txt_area">
+                                <h2>
+                                    <em>음식, 문화, 그리고 사람</em>
+                                    About <strong>더테이스터블</strong>
+                                </h2>
+                                <p>더테이스터블은 컨텐츠 경쟁력을 기반으로 우리의 컨텐츠를 온/오프라인 플랫폼을 통해 고객에게 제공합니다.</p>
+                            </div>
+                            <ul>
+                                <li>
+                                    <span class="icon icon_section3_1"></span>
+                                    <div class="txt_box">
+                                        <span><strong class="num" data-number="15"><span class="ir">15</span></strong>개점</span>
+                                        <p>브랜드 레스토랑</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="icon icon_section3_2"></span>
+                                    <div class="txt_box">
+                                        <span><strong class="num" data-number="4"><span class="ir">4</span></strong>개점</span>
+                                        <p>컨벤션</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="icon icon_section3_3"></span>
+                                    <div class="txt_box">
+                                        <span><strong class="num" data-number="3"><span class="ir">3</span></strong>개점</span>
+                                        <p>골프장 F&B</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="icon icon_section3_4"></span>
+                                    <div class="txt_box">
+                                        <span><strong class="num" data-number="2"><span class="ir">2</span></strong>개소</span>
+                                        <p>휴게소 F&B</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="icon icon_section3_5"></span>
+                                    <div class="txt_box">
+                                        <span><strong class="num" data-number="3"><span class="ir">3</span></strong>개점</span>
+                                        <p>캐주얼 레스토랑</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <span class="indi_txt">About</span>
+                </div>
+                <div class="sect sect_04">
+                    <div class="brand_area">
+                        <div class="inner">
+                            <div class="txt_area">
+                                <h2>
+                                    <em>당신에게 행복을 선사합니다</em>
+                                    Brand</strong>
+                                </h2>
+                                <p>더테이스터블는 플랫폼 상품을 기획하고 판매하여 최고의 브랜드로 고객님께 보답하고자 합니다</p>
+                            </div>
+                            <div class="brand_wrap">
+                                <ul class="brand_list">
+                                    <li class="brand brand_1">
+                                        <a href="javascript:void(0)">
+                                            <div class="front">
+                                                <h3>
+                                                    <img src="/thetastable/resource/img/tit_brand1.png" alt="Taoyuen Style">
+                                                </h3>
+                                                <p>Taoyuen Style</p>
+                                            </div>
+                                            <div class="over">
+                                                <span class="btn_more">자세히 보기</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="brand brand_2">
+                                        <a href="javascript:void(0)" >
+                                            <div class="front">
+                                                <h3>
+                                                    <img src="/thetastable/resource/img/tit_brand2.png" alt="T-won">
+                                                </h3>
+                                                <p>T-won</p>
+                                            </div>
+                                            <div class="over">
+                                                <span class="btn_more">자세히 보기</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="brand brand_3">
+                                        <a href="javascript:void(0)" >
+                                            <div class="front">
+                                                <h3>
+                                                    <img src="/thetastable/resource/img/tit_brand3.png" alt="63 Restaurant">
+                                                </h3>
+                                                <p>63 Restaurant</p>
+                                            </div>
+                                            <div class="over">
+                                                <span class="btn_more">자세히 보기</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="brand brand_4">
+                                        <a href="javascript:void(0)" >
+                                            <div class="front">
+                                                <h3>
+                                                    <img src="/thetastable/resource/img/tit_brand4.png" alt="63 Convention">
+                                                </h3>
+                                                <p>63 Convention</p>
+                                            </div>
+                                            <div class="over">
+                                                <span class="btn_more">자세히 보기</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="brand brand_5">
+                                        <a href="javascript:void(0)" >
+                                            <div class="front">
+                                                <h3>
+                                                    <img src="/thetastable/resource/img/tit_brand5.png" alt="63 Dining Kit">
+                                                </h3>
+                                                <p>63 Dining Kit</p>
+                                            </div>
+                                            <div class="over">
+                                                <span class="btn_more">자세히 보기</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="brand brand_6">
+                                        <a href="javascript:void(0)" >
+                                            <div class="front">
+                                                <h3>
+                                                    <img src="/thetastable/resource/img/tit_brand6.png" alt="Plaza Wedding">
+                                                </h3>
+                                                <p>Plaza Wedding</p>
+                                            </div>
+                                            <div class="over">
+                                                <span class="btn_more">자세히 보기</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="brand brand_7">
+                                        <a href="javascript:void(0)" >
+                                            <div class="front">
+                                                <h3>
+                                                    <img src="/thetastable/resource/img/tit_brand7.png" alt="Baeknihyang Style">
+                                                </h3>
+                                                <p>Baeknihyang Style</p>
+                                            </div>
+                                            <div class="over">
+                                                <span class="btn_more">자세히 보기</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="btn_box">
+                                    <a href="javascript:void(0);" class="btn btn_prev"><span class="ir">이전으로</span></a>
+                                    <span class="circle"></span>
+                                    <a href="javascript:void(0);" class="btn btn_next"><span class="ir">이전으로</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="indi_txt">Brand</span>
+                </div>
+                <div class="sect sect_05">
+                    <div class="inquiry_area">
+                        <div class="inner">
+                            <div class="cont left">
+                                <div class="txt_area">
+                                    <h2>입점문의</h2>
+                                    <p>더테이스터블은 항상 동반성장을 목표로 합니다.</p>
+                                </div>
+                                <div class="input_box">
+                                    <ul>
+                                        <li>
+                                            <label for="name">이름</label>
+                                            <input type="text" id="name" placeholder="이름을 입력해주세요" />
+                                        </li>
+                                        <li>
+                                            <label for="tel">연락처</label>
+                                            <input type="text" id="tel" placeholder="-제외 숫자로 입력해주세요" />
+                                        </li>
+                                        <li>
+                                            <label for="content">내용</label>
+                                            <textarea id="content" placeholder="내용을 입력해주세요"></textarea>
+                                        </li>
+                                    </ul>
+                                    <div class="agree_box">
+                                        <input type="checkbox" id="agreeY">
+                                        <label for="agreeY">모든 약관을 확인하고 동의합니다</label>
+                                        <a href="javascript:void(0);">(내용보기)</a>
+                                    </div>
+                                </div>
+                                <div class="inquiry_box">
+                                    <dl>
+                                        <dt>고객센터</dt>
+                                        <dd>1577-1469</dd>
+                                    </dl>
+                                    <a href="javascript:void(0);" class="btn_inquiry">입점문의</a>
+                                </div>
+                            </div>
+                            <div class="cont right">
+                                <div class="right_cont right_top">
+                                    <div class="txt_area">
+                                        <em>Customer Voice</em>
+                                        <p>더테이스터블은 항상 여러분의 이야기를 기다립니다<br/>칭찬, 문의 및 제안을 남겨주세요</p>
+                                    </div>
+                                    <div class="inquiry_box">
+                                        <dl>
+                                            <dt>고객센터</dt>
+                                            <dd>1577-1469</dd>
+                                        </dl>
+                                        <a href="javascript:void(0);" class="btn_inquiry">고객의 소리 문의</a>
+                                    </div>
+                                </div>
+                                <div class="right_cont right_bot">
+                                    <div class="txt_area">
+                                        <em>Recruit</em>
+                                        <p>더테이스터블과 함께하길 원하는 역량있는 인재를 모십니다.</p>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <a href="javascript:void(0);">[신입] 더테이스터블 63빌딩 레스토랑 식음/조리 서비스 신입사원 모집</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <span class="indi_txt">Inquiry</span>
+                </div>
+            </div>
+            
+            <div class="footer">
+                <div class="footer_inner">
+                    <div class="left">
+                        <p>서울특별시 영등포구 63로 40 라이프오피스텔 102호 (여의도동)</p>
+                        <div class="tel_wrap">
+                            <dl>
+                                <dt>Tel. </dt>
+                                <dd><a href="javascript:void(0);">1577-1469</a></dd>
+                            </dl>
+                            <dl>
+                                <dt>Fax. </dt>
+                                <dd>02-786-9677</dd>
+                            </dl>
+                        </div>
+                        <span>Copyright ⓒ 2021 더테이스터블 주식회사. All rights Reserved</span>
+                    </div>
+                    <div class="right">
+                        <ul class="privasy_wrap">
+                            <li><a href="javascript:void(0);">개인정보처리방침</a></li>
+                            <li><a href="javascript:void(0);">이메일 무단 수집거부</a></li>
+                        </ul>
+                        <ul class="menu_wrap">
+                            <li><a href="javascript:void(0);">회사소개</a></li>
+                            <li><a href="javascript:void(0);">사업분야</a></li>
+                            <li><a href="javascript:void(0);">브랜드소개</a></li>
+                            <li><a href="javascript:void(0);">인재영입</a></li>
+                            <li><a href="javascript:void(0);">고객의 소리</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/thetastable/resource/js/jquery-1.12.4.min.js"></script>
+    <script src="/thetastable/resource/js/index.js"></script>
+</body>
+
+</html>
