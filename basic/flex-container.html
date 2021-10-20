@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="/basic/resource/js/jquery-1.12.4.min.js"></script>
+
+  <title>flex-container 속성</title>
+  <style>
+    html, body, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td, form, fieldset, legend, input, textarea, button, select{padding:0; margin:0;}
+    ol, ul, li{list-style:none;}
+    h1, h2, h3, h4, h5, h6, strong{font-size:100%; line-height:1; margin-block-start: 0; margin-block-end: 0;}
+    .container{padding: 100px 0;}
+    .cont{width:1000px; margin: 0 auto;}
+    .cont h2{margin-bottom: 30px; font-size: 30px;}
+    .cont h3{margin-bottom: 30px; font-size: 24px;}
+    .box{width:100%; padding:50px; margin-bottom: 30px; border:1px dashed darkcyan; box-sizing:border-box;}
+    .flex-container{display:flex;}
+    .flex-container.flexWrap .flex-item{width:300px;}
+    .flex-container.alignContent{flex-wrap: wrap; height:200px;}
+    .flex-container.alignContent .flex-item{width:250px;}
+    .flex-item{width:100px; font-size: 20px;}
+    .input_wrap{display: flex; justify-content: space-between; margin-top:30px;}
+    .input_wrap label{font-size: 20px;}
+  </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="container">
+           <div class="cont">
+                <h2>flex-container 속성</h2>
+                <div class="box" data-property="flex-direction">
+                    <h3>flex-direction</h3>
+                    <ul class="flex-container">
+                        <li class="flex-item" style="background-color:pink;">1</li>
+                        <li class="flex-item" style="background-color:cornflowerblue;">2</li>
+                        <li class="flex-item" style="background-color:rgb(220, 243, 220);">3</li>
+                        <li class="flex-item" style="background-color:rgb(113, 192, 113);">4</li>
+                        <li class="flex-item" style="background-color:rgb(177, 127, 226);">5</li>
+                    </ul>
+                    <ul class="input_wrap">
+                        <li>
+                            <input type="radio" id="row" name="direction" data-value="row" checked />
+                            <label name="direction" for="row">row</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="row-reverse" name="direction" data-value="row-reverse" />
+                            <label name="direction" for="row-reverse">row-reverse</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="column" name="direction" data-value="column" />
+                            <label name="direction" for="column">column</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="column-reverse" name="direction" data-value="column-reverse" />
+                            <label name="direction" for="column-reverse">column-reverse</label>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="box" data-property="flex-wrap">
+                    <h3>flex-wrap</h3>
+                    <ul class="flex-container flexWrap">
+                        <li class="flex-item" style="background-color:pink;">1</li>
+                        <li class="flex-item" style="background-color:cornflowerblue;">2</li>
+                        <li class="flex-item" style="background-color:rgb(220, 243, 220);">3</li>
+                        <li class="flex-item" style="background-color:rgb(113, 192, 113);">4</li>
+                        <li class="flex-item" style="background-color:rgb(177, 127, 226);">5</li>
+                    </ul>
+                    <ul class="input_wrap">
+                        <li>
+                            <input type="radio" id="nowrap" name="flex-wrap" data-value="nowrap" checked />
+                            <label name="flex-wrap" for="nowrap">nowrap</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="wrap" name="flex-wrap" data-value="wrap" />
+                            <label name="flex-wrap" for="wrap">wrap</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="wrap-reverse" name="flex-wrap" data-value="wrap-reverse" />
+                            <label name="flex-wrap" for="wrap-reverse">wrap-reverse</label>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="box" data-property="justify-content">
+                    <h3>justify-content</h3>
+                    <ul class="flex-container">
+                        <li class="flex-item" style="background-color:pink;">1</li>
+                        <li class="flex-item" style="background-color:cornflowerblue;">2</li>
+                        <li class="flex-item" style="background-color:rgb(220, 243, 220);">3</li>
+                        <li class="flex-item" style="background-color:rgb(113, 192, 113);">4</li>
+                        <li class="flex-item" style="background-color:rgb(177, 127, 226);">5</li>
+                    </ul>
+                    <ul class="input_wrap">
+                        <li>
+                            <input type="radio" id="flex-start" name="justify-content" data-value="flex-start" checked />
+                            <label name="justify-content" for="flex-start">flex-start</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="flex-end" name="justify-content" data-value="flex-end" />
+                            <label name="justify-content" for="flex-end">flex-end</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="center" name="justify-content" data-value="center" />
+                            <label name="justify-content" for="center">center</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="space-between" name="justify-content" data-value="space-between" />
+                            <label name="justify-content" for="space-between">space-between</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="space-around" name="justify-content" data-value="space-around" />
+                            <label name="justify-content" for="space-around">space-around</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="space-evenly" name="justify-content" data-value="space-evenly" />
+                            <label name="justify-content" for="space-evenly">space-evenly</label>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="box" data-property="align-content">
+                    <h3>align-content</h3>
+                    <ul class="flex-container alignContent">
+                        <li class="flex-item" style="background-color:pink;">1</li>
+                        <li class="flex-item" style="background-color:cornflowerblue;">2</li>
+                        <li class="flex-item" style="background-color:rgb(220, 243, 220);">3</li>
+                        <li class="flex-item" style="background-color:rgb(113, 192, 113);">4</li>
+                        <li class="flex-item" style="background-color:rgb(177, 127, 226);">5</li>
+                        <li class="flex-item" style="background-color:pink;">6</li>
+                        <li class="flex-item" style="background-color:cornflowerblue;">7</li>
+                        <li class="flex-item" style="background-color:rgb(220, 243, 220);">8</li>
+                        <li class="flex-item" style="background-color:rgb(113, 192, 113);">9</li>
+                        <li class="flex-item" style="background-color:rgb(177, 127, 226);">10</li>
+                    </ul>
+                    <ul class="input_wrap">
+                        <li>
+                            <input type="radio" id="stretch" name="align-content" data-value="stretch" checked />
+                            <label name="align-content" for="stretch">stretch</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="flex-start2" name="align-content" data-value="flex-start" />
+                            <label name="align-content" for="flex-start2">flex-start</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="flex-end2" name="align-content" data-value="flex-end" />
+                            <label name="align-content" for="flex-end2">flex-end</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="center2" name="align-content" data-value="center" />
+                            <label name="align-content" for="center2">center</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="space-between2" name="align-content" data-value="space-between" />
+                            <label name="align-content" for="space-between2">space-between</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="space-around2" name="align-content" data-value="space-around" />
+                            <label name="align-content" for="space-around2">space-around</label>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="box" data-property="align-items">
+                    <h3>align-items</h3>
+                    <ul class="flex-container">
+                        <li class="flex-item" style="height:100px; background-color:pink;">1</li>
+                        <li class="flex-item" style="background-color:cornflowerblue;">2</li>
+                        <li class="flex-item" style="background-color:rgb(220, 243, 220);">3</li>
+                        <li class="flex-item" style="height:100px; background-color:rgb(113, 192, 113);">4</li>
+                        <li class="flex-item" style="background-color:rgb(177, 127, 226);">5</li>
+                    </ul>
+                    <ul class="input_wrap">
+                        <li>
+                            <input type="radio" id="stretch2" name="align-items" data-value="stretch" checked />
+                            <label name="align-items" for="stretch2">stretch</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="flex-start3" name="align-items" data-value="flex-start" />
+                            <label name="align-items" for="flex-start3">flex-start</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="flex-end3" name="align-items" data-value="flex-end" />
+                            <label name="align-items" for="flex-end3">flex-end</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="center3" name="align-items" data-value="center" />
+                            <label name="align-items" for="center3">center</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="baseline" name="align-items" data-value="baseline" />
+                            <label name="align-items" for="baseline">baseline</label>
+                        </li>
+                    </ul>
+                </div>
+           </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    $input = $(".input_wrap").find("input");
+
+    $input.change(function(){
+        var $this = $(this),
+            $parent = $this.closest(".box"),
+            $flexContainer = $parent.find(".flex-container"),
+            parent_data = $parent.data("property"),
+            this_data = $this.data("value");
+            
+        $flexContainer.css(parent_data,this_data);
+    })
+    
+</script>
+
+</html>

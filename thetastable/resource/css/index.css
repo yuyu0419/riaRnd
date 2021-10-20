@@ -132,6 +132,8 @@
 
 .header .gnb { display: block; position: absolute; top: 0%; left: 50%; width: 755px; height: 100px; -webkit-transform: translateX(-50%); -ms-transform: translateX(-50%); transform: translateX(-50%); }
 
+.header .gnb ul { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; }
+
 .header .gnb .depth_wrap { display: inline-block; width: auto; text-align: center; vertical-align: text-top; }
 
 .header .gnb .depth1 { display: block; padding: 40px 27px; font-weight: 400; font-size: 18px; color: #fff; -webkit-transition: 0.2s; transition: 0.2s; }
@@ -241,6 +243,8 @@
 .header.hidden { z-index: -1000; opacity: 0; visibility: hidden; }
 
 .header.all::after { width: 0; }
+
+.header.all .gnb_bg { height: 0; opacity: 0; }
 
 .header.all .header_inner { position: fixed; top: 0; left: 0; z-index: 1001; width: 100%; padding: 0; }
 

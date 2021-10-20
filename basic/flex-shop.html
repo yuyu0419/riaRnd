@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/basic/resource/css/flex-test2.css">  
+  <script src="/basic/resource/js/jquery-1.12.4.min.js"></script>
+
+  <title>shopping list</title>
+  <style>
+    html, body{padding:0; margin:0;}
+   
+  </style>
+</head>
+<body>
+    <div class="wrap">
+        <!-- <header>
+            <div class="header_wrap">
+                <div class="header_inner">
+                    <h2 class="logo"><a href="javascript:void(0);">로고</a></h2>
+                    <div class="gnb_wrap">
+                        <ul class="gnb">
+                            <li class="depth1_wrap">
+                                <a href="javascript:void(0);" class="depth1">depth1</a>
+                                <div class="sub_menu">
+                                    <strong>depth1 Wrap</strong>
+                                    <ul class="depth2_wrap">
+                                        <li>
+                                            <a href="javascript:void(0);" class="depth2">depth1-2-1</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" class="depth2">depth1-2-2</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" class="depth2">depth1-2-3</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="depth1_wrap">
+                                <a href="javascript:void(0);" class="depth1">depth2</a>
+                                <div class="sub_menu">
+                                    <strong>depth2 Wrap</strong>
+                                    <ul class="depth2_wrap">
+                                        <li>
+                                            <a href="javascript:void(0);" class="depth2">depth2-2-1</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" class="depth2">depth2-2-2</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" class="depth2">depth2-2-3</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="depth1_wrap">
+                                <a href="javascript:void(0);" class="depth1">depth3</a>
+                                <div class="sub_menu">
+                                    <strong>depth3 Wrap</strong>
+                                    <ul class="depth2_wrap">
+                                        <li>
+                                            <a href="javascript:void(0);" class="depth2">depth3-2-1</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" class="depth2">depth3-2-2</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" class="depth2">depth3-2-3</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="depth1_wrap">
+                                <a href="javascript:void(0);" class="depth1">depth4</a>
+                                <div class="sub_menu">
+                                    <strong>depth4 Wrap</strong>
+                                    <ul class="depth2_wrap">
+                                        <li>
+                                            <a href="javascript:void(0);" class="depth2">depth4-2-1</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" class="depth2">depth4-2-1</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" class="depth2">depth4-2-1</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="burger">
+                            <span class="ir">메뉴</span>
+                            <button type="button">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+        </header> -->
+
+        <div class="container">
+            <div class="visual">
+                <div class="inner">
+                    <h2>VISUAL AREA</h2>
+                </div>
+            </div>
+            <div class="cont">
+                <div class="inner prd_inner">
+                    <div class="check_list">
+                        <h3>프로젝터 상세 검색</h3>
+                        <div class="filter_wrap">
+                            <h4><a href="javascript:void(0);">해상도</a></h4>
+                            <ul>
+                                <li>
+                                    <input type="checkbox" id="hd"/>
+                                    <label for="hd">HD(1280x720)</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="fullHd"/>
+                                    <label for="fullHd">Full HD(1920x1080)</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="4k"/>
+                                    <label for="4k">4K UHD(3840x2160)</label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="filter_wrap">
+                            <h4><a href="javascript:void(0);">밝기</a></h4>
+                            <ul>
+                                <li>
+                                    <input type="checkbox" id="lumen1000"/>
+                                    <label for="lumen1000">~1000루멘</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="lumen2000"/>
+                                    <label for="lumen2000">~2000루멘</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="lumen3000"/>
+                                    <label for="lumen3000">~3000루멘</label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="filter_wrap">
+                            <h4><a href="javascript:void(0);">광원</a></h4>
+                            <ul>
+                                <li>
+                                    <input type="checkbox" id="laser"/>
+                                    <label for="laser">Laser</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="chanel3"/>
+                                    <label for="chanel3">3채널 레이저</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="dualLaser"/>
+                                    <label for="dualLaser">듀얼레이저</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="rgbbLED"/>
+                                    <label for="rgbbLED">RGBB LED</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="rgbLED"/>
+                                    <label for="rgbLED">RGB LED</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="led"/>
+                                    <label for="led">LED</label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div> 
+                    <div class="prd_wrap">
+                        <div class="list_top">
+                            <span id="prdTotal" class="total">총 9개</span>
+                            <div class="solting_list">
+                                <p class="current"><a href="javascript:void(0);">추천순</a></p>
+                                <ul style="display: none;">
+                                    <li class="active"><a href="javascript:void(0);">추천순</a></li>
+                                    <li><a href="javascript:void(0);">인기순</a></li>
+                                    <li><a href="javascript:void(0);">최신순</a></li>
+                                    <li><a href="javascript:void(0);">가격 높은 순</a></li>
+                                    <li><a href="javascript:void(0);">가격 낮은 순</a></li>
+                                    <li><a href="javascript:void(0);">리뷰 많은 순</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <ul class="prd_list">
+                            <li class="new_prd">
+                                <div class="img_box">
+                                    <div class="img"><img src="resource/img/vdo2_thumb0.jpg" alt=""></div>
+                                    <a href="javascript:void(0);" class="compare_btn">비교하기</a>
+                                </div>
+                                <div class="txt_box">
+                                    <dl>
+                                        <dt>LG 시네빔</dt>
+                                        <dd class="review">PH510P 
+                                            <a href="javascript:void(0);">5(5)</a>
+                                        </dd>
+                                        <dd>밝기(안시루멘) : 최대 550</dd>
+                                        <dd>해상도 : HD(1280x720)</dd>
+                                    </dl>
+                                    <div class="price">
+                                        <div class="sale_price">
+                                            <span class="ir">세일 후 가격</span>
+                                            <span>520,600원</span>
+                                        </div>
+                                        <div class="original_price">
+                                            <span class="ir">세일 전 정가</span>
+                                            <span>570,900원</span>
+                                        </div>
+                                    </div>
+                                    <div class="prd_btn">
+                                        <a href="javascript:void(0);" class="like_btn"><span class="ir">찜하기</span></a>
+                                        <a href="javascript:void(0);" class="cart_btn"><span class="ir">장바구니</span></a>
+                                        <a href="javascript:void(0);" class="detail_btn">자세히 보기</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="new_prd">
+                                <div class="img_box">
+                                    <div class="img"><img src="resource/img/vdo2_thumb0.jpg" alt=""></div>
+                                    <a href="javascript:void(0);" class="compare_btn">비교하기</a>
+                                </div>
+                                <div class="txt_box">
+                                    <dl>
+                                        <dt>LG 시네빔</dt>
+                                        <dd class="review">PH510P 
+                                            <a href="javascript:void(0);">4.5(2)</a>
+                                        </dd>
+                                        <dd>밝기(안시루멘) : 최대 550</dd>
+                                        <dd>해상도 : HD(1280x720)</dd>
+                                    </dl>
+                                    <div class="price">
+                                        <div class="sale_price">
+                                            <span class="ir">세일 후 가격</span>
+                                            <span>520,600원</span>
+                                        </div>
+                                        <div class="original_price">
+                                            <span class="ir">세일 전 정가</span>
+                                            <span>570,900원</span>
+                                        </div>
+                                    </div>
+                                    <div class="prd_btn">
+                                        <a href="javascript:void(0);" class="like_btn"><span class="ir">찜하기</span></a>
+                                        <a href="javascript:void(0);" class="cart_btn"><span class="ir">장바구니</span></a>
+                                        <a href="javascript:void(0);" class="detail_btn">자세히 보기</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="img_box">
+                                    <div class="img"><img src="resource/img/vdo2_thumb0.jpg" alt=""></div>
+                                    <a href="javascript:void(0);" class="compare_btn">비교하기</a>
+                                </div>
+                                <div class="txt_box">
+                                    <dl>
+                                        <dt>LG 시네빔</dt>
+                                        <dd class="review">PH510P 
+                                            <a href="javascript:void(0);">5(5)</a>
+                                        </dd>
+                                        <dd>밝기(안시루멘) : 최대 550</dd>
+                                        <dd>해상도 : HD(1280x720)</dd>
+                                    </dl>
+                                    <div class="price">
+                                        <div class="sale_price">
+                                            <span class="ir">세일 후 가격</span>
+                                            <span>520,600원</span>
+                                        </div>
+                                        <div class="original_price">
+                                            <span class="ir">세일 전 정가</span>
+                                            <span>570,900원</span>
+                                        </div>
+                                    </div>
+                                    <div class="prd_btn">
+                                        <a href="javascript:void(0);" class="like_btn"><span class="ir">찜하기</span></a>
+                                        <a href="javascript:void(0);" class="cart_btn"><span class="ir">장바구니</span></a>
+                                        <a href="javascript:void(0);" class="detail_btn">자세히 보기</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="img_box">
+                                    <div class="img"><img src="resource/img/vdo2_thumb0.jpg" alt=""></div>
+                                    <a href="javascript:void(0);" class="compare_btn">비교하기</a>
+                                </div>
+                                <div class="txt_box">
+                                    <dl>
+                                        <dt>LG 시네빔</dt>
+                                        <dd class="review">PH510P 
+                                            <a href="javascript:void(0);">5(5)</a>
+                                        </dd>
+                                        <dd>밝기(안시루멘) : 최대 550</dd>
+                                        <dd>해상도 : HD(1280x720)</dd>
+                                    </dl>
+                                    <div class="price">
+                                        <div class="sale_price">
+                                            <span class="ir">세일 후 가격</span>
+                                            <span>520,600원</span>
+                                        </div>
+                                        <div class="original_price">
+                                            <span class="ir">세일 전 정가</span>
+                                            <span>570,900원</span>
+                                        </div>
+                                    </div>
+                                    <div class="prd_btn">
+                                        <a href="javascript:void(0);" class="like_btn"><span class="ir">찜하기</span></a>
+                                        <a href="javascript:void(0);" class="cart_btn"><span class="ir">장바구니</span></a>
+                                        <a href="javascript:void(0);" class="detail_btn">자세히 보기</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="img_box">
+                                    <div class="img"><img src="resource/img/vdo2_thumb0.jpg" alt=""></div>
+                                    <a href="javascript:void(0);" class="compare_btn">비교하기</a>
+                                </div>
+                                <div class="txt_box">
+                                    <dl>
+                                        <dt>LG 시네빔</dt>
+                                        <dd class="review">PH510P 
+                                            <a href="javascript:void(0);">5(5)</a>
+                                        </dd>
+                                        <dd>밝기(안시루멘) : 최대 550</dd>
+                                        <dd>해상도 : HD(1280x720)</dd>
+                                    </dl>
+                                    <div class="price">
+                                        <div class="sale_price">
+                                            <span class="ir">세일 후 가격</span>
+                                            <span>520,600원</span>
+                                        </div>
+                                        <div class="original_price">
+                                            <span class="ir">세일 전 정가</span>
+                                            <span>570,900원</span>
+                                        </div>
+                                    </div>
+                                    <div class="prd_btn">
+                                        <a href="javascript:void(0);" class="like_btn"><span class="ir">찜하기</span></a>
+                                        <a href="javascript:void(0);" class="cart_btn"><span class="ir">장바구니</span></a>
+                                        <a href="javascript:void(0);" class="detail_btn">자세히 보기</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="img_box">
+                                    <div class="img"><img src="resource/img/vdo2_thumb0.jpg" alt=""></div>
+                                    <a href="javascript:void(0);" class="compare_btn">비교하기</a>
+                                </div>
+                                <div class="txt_box">
+                                    <dl>
+                                        <dt>LG 시네빔</dt>
+                                        <dd class="review">PH510P 
+                                            <a href="javascript:void(0);">5(5)</a>
+                                        </dd>
+                                        <dd>밝기(안시루멘) : 최대 550</dd>
+                                        <dd>해상도 : HD(1280x720)</dd>
+                                    </dl>
+                                    <div class="price">
+                                        <div class="sale_price">
+                                            <span class="ir">세일 후 가격</span>
+                                            <span>520,600원</span>
+                                        </div>
+                                        <div class="original_price">
+                                            <span class="ir">세일 전 정가</span>
+                                            <span>570,900원</span>
+                                        </div>
+                                    </div>
+                                    <div class="prd_btn">
+                                        <a href="javascript:void(0);" class="like_btn"><span class="ir">찜하기</span></a>
+                                        <a href="javascript:void(0);" class="cart_btn"><span class="ir">장바구니</span></a>
+                                        <a href="javascript:void(0);" class="detail_btn">자세히 보기</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="img_box">
+                                    <div class="img"><img src="resource/img/vdo2_thumb0.jpg" alt=""></div>
+                                    <a href="javascript:void(0);" class="compare_btn">비교하기</a>
+                                </div>
+                                <div class="txt_box">
+                                    <dl>
+                                        <dt>LG 시네빔</dt>
+                                        <dd class="review">PH510P 
+                                            <a href="javascript:void(0);">5(5)</a>
+                                        </dd>
+                                        <dd>밝기(안시루멘) : 최대 550</dd>
+                                        <dd>해상도 : HD(1280x720)</dd>
+                                    </dl>
+                                    <div class="price">
+                                        <div class="sale_price">
+                                            <span class="ir">세일 후 가격</span>
+                                            <span>520,600원</span>
+                                        </div>
+                                        <div class="original_price">
+                                            <span class="ir">세일 전 정가</span>
+                                            <span>570,900원</span>
+                                        </div>
+                                    </div>
+                                    <div class="prd_btn">
+                                        <a href="javascript:void(0);" class="like_btn"><span class="ir">찜하기</span></a>
+                                        <a href="javascript:void(0);" class="cart_btn"><span class="ir">장바구니</span></a>
+                                        <a href="javascript:void(0);" class="detail_btn">자세히 보기</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="img_box">
+                                    <div class="img"><img src="resource/img/vdo2_thumb0.jpg" alt=""></div>
+                                    <a href="javascript:void(0);" class="compare_btn">비교하기</a>
+                                </div>
+                                <div class="txt_box">
+                                    <dl>
+                                        <dt>LG 시네빔</dt>
+                                        <dd class="review">PH510P 
+                                            <a href="javascript:void(0);">5(5)</a>
+                                        </dd>
+                                        <dd>밝기(안시루멘) : 최대 550</dd>
+                                        <dd>해상도 : HD(1280x720)</dd>
+                                    </dl>
+                                    <div class="price">
+                                        <div class="sale_price">
+                                            <span class="ir">세일 후 가격</span>
+                                            <span>520,600원</span>
+                                        </div>
+                                        <div class="original_price">
+                                            <span class="ir">세일 전 정가</span>
+                                            <span>570,900원</span>
+                                        </div>
+                                    </div>
+                                    <div class="prd_btn">
+                                        <a href="javascript:void(0);" class="like_btn"><span class="ir">찜하기</span></a>
+                                        <a href="javascript:void(0);" class="cart_btn"><span class="ir">장바구니</span></a>
+                                        <a href="javascript:void(0);" class="detail_btn">자세히 보기</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="img_box">
+                                    <div class="img"><img src="resource/img/vdo2_thumb0.jpg" alt=""></div>
+                                    <a href="javascript:void(0);" class="compare_btn">비교하기</a>
+                                </div>
+                                <div class="txt_box">
+                                    <dl>
+                                        <dt>LG 시네빔</dt>
+                                        <dd class="review">PH510P 
+                                            <a href="javascript:void(0);">5(5)</a>
+                                        </dd>
+                                        <dd>밝기(안시루멘) : 최대 550</dd>
+                                        <dd>해상도 : HD(1280x720)</dd>
+                                    </dl>
+                                    <div class="price">
+                                        <div class="sale_price">
+                                            <span class="ir">세일 후 가격</span>
+                                            <span>520,600원</span>
+                                        </div>
+                                        <div class="original_price">
+                                            <span class="ir">세일 전 정가</span>
+                                            <span>570,900원</span>
+                                        </div>
+                                    </div>
+                                    <div class="prd_btn">
+                                        <a href="javascript:void(0);" class="like_btn"><span class="ir">찜하기</span></a>
+                                        <a href="javascript:void(0);" class="cart_btn"><span class="ir">장바구니</span></a>
+                                        <a href="javascript:void(0);" class="detail_btn">자세히 보기</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="img_box">
+                                    <div class="img"><img src="resource/img/vdo2_thumb0.jpg" alt=""></div>
+                                    <a href="javascript:void(0);" class="compare_btn">비교하기</a>
+                                </div>
+                                <div class="txt_box">
+                                    <dl>
+                                        <dt>LG 시네빔</dt>
+                                        <dd class="review">PH510P 
+                                            <a href="javascript:void(0);">5(5)</a>
+                                        </dd>
+                                        <dd>밝기(안시루멘) : 최대 550</dd>
+                                        <dd>해상도 : HD(1280x720)</dd>
+                                    </dl>
+                                    <div class="price">
+                                        <div class="sale_price">
+                                            <span class="ir">세일 후 가격</span>
+                                            <span>520,600원</span>
+                                        </div>
+                                        <div class="original_price">
+                                            <span class="ir">세일 전 정가</span>
+                                            <span>570,900원</span>
+                                        </div>
+                                    </div>
+                                    <div class="prd_btn">
+                                        <a href="javascript:void(0);" class="like_btn"><span class="ir">찜하기</span></a>
+                                        <a href="javascript:void(0);" class="cart_btn"><span class="ir">장바구니</span></a>
+                                        <a href="javascript:void(0);" class="detail_btn">자세히 보기</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <footer>
+            <div class="inner">            
+                <span style="display: block; font-size: 100px; text-align: center;">footer</span>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

@@ -28,9 +28,6 @@
                 .btn_search {
                     background: #b2b2b2 url("/thetastable/resource/img/icon_search.png") center no-repeat;
                 }
-                // .burger {
-                //     border-left: 1px solid #e5e5e5;
-                // }
                 .btn_burger {
                     .line {
                         background: #808080;
@@ -423,6 +420,9 @@
         transform: translateX(-50%);
 
         ul {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
         }
 
         .depth_wrap {
@@ -741,6 +741,10 @@
     &.all {
         &::after {
             width: 0;
+        }
+        .gnb_bg {
+            height: 0;
+            opacity: 0;
         }
         .header_inner {
             position: fixed;
