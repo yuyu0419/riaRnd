@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import "mixin";
 
 /* font */
 @font-face {
@@ -189,6 +190,7 @@ textarea {
     height: 0;
     line-height: 0;
     text-indent: -9999px;
+    @include wordHide;
 }
 /* HTML5 display-role reset for older browsers */
 article,

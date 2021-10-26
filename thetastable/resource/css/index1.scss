@@ -1,6 +1,5 @@
 @charset "UTF-8";
 @import url(reset.css);
-
 /* common */
 .wrap {
     position: relative;
@@ -373,7 +372,6 @@
 
     .header_inner {
         position: relative;
-        padding: 30px 0;
         height: 100px;
         box-sizing: border-box;
         &::after {
@@ -412,32 +410,37 @@
         }
     }
     .gnb {
-        display: block;
-        position: absolute;
-        top: 0%;
-        left: 50%;
-        width: 755px;
-        height: 100px;
-        transform: translateX(-50%);
-
-        ul {
+        position: relative;
+        height: auto;
+        > ul {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: flex-start;
+            position: absolute;
+            top: 0%;
+            left: 50%;
+            width: 100%;
+            width: 755px;
+            height: 100%;
+            transform: translateX(-50%);
         }
 
         .depth_wrap {
-            display: inline-block;
-            width: auto;
+            flex-shrink: 0;
+            // display: inline-block;
+            flex-basis: 18%;
             // padding: 0 ;
             text-align: center;
-            vertical-align: text-top;
+            // vertical-align: text-top;
+            &:last-child {
+                flex-grow: 1.5;
+            }
         }
         .depth1 {
             display: block;
             padding: 40px 27px;
             font-weight: 400;
-            font-size: 18px;
+            font-size: 17px;
             color: #fff;
             transition: 0.2s;
             &.active {
@@ -472,13 +475,19 @@
             width: 270px;
             font-size: 0;
             vertical-align: middle;
+            &.on {
+                input[type="text"] {
+                    width: 180px;
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+                }
+            }
         }
         input[type="text"] {
+            visibility: hidden;
             width: 180px;
             padding: 0 5px;
             background: none;
             border: none;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
             vertical-align: bottom;
         }
         .burger {
@@ -926,9 +935,6 @@
     }
     position: relative;
     height: 100vh;
-    .sect_cont {
-        padding-top: 100px;
-    }
     .indi_txt {
         position: absolute;
         bottom: 67px;
@@ -984,8 +990,8 @@
             content: "";
         }
     }
-    .area {
-        &_vdo {
+    &_01 {
+        .vdo_area {
             position: relative;
             width: 100%;
             video {
@@ -1000,19 +1006,6 @@
                 object-fit: cover;
             }
         }
-        &_business {
-            height: 100%;
-        }
-        &_about {
-            // padding: 230px 0;
-        }
-        &_brand {
-            // padding: 145px 0 90px 0;
-        }
-        &_inquiry {
-        }
-    }
-    &_01 {
         .txt_area {
             position: absolute;
             bottom: 85px;
@@ -1044,628 +1037,606 @@
             }
         }
     }
-    &_02 {
-        ul {
-            width: 100%;
-            height: 100%;
-            font-size: 0;
-        }
-        li {
-            display: inline-block;
-            position: relative;
-            width: 33.33%;
-            height: 100%;
-            $bg_list: 1, 2, 3;
-            @each $num in $bg_list {
-                &.section2_#{$num} {
-                    .bg {
-                        width: 0;
-                        height: 100%;
-                        background: url("/thetastable/resource/img/img_section2_#{$num}.jpg") center no-repeat;
-                        background-size: cover;
-                    }
-                }
-            }
+    // &_02 {
+    //     .business_area {
+    //         height: 100%;
+    //         ul {
+    //             width: 100%;
+    //             height: 100%;
+    //             font-size: 0;
+    //         }
+    //         li {
+    //             display: inline-block;
+    //             position: relative;
+    //             width: 33.33%;
+    //             height: 100%;
+    //             $bg_list: 1, 2, 3;
+    //             @each $num in $bg_list {
+    //                 &.section2_#{$num} {
+    //                     .bg {
+    //                         width: 0;
+    //                         height: 100%;
+    //                         background: url("/thetastable/resource/img/img_section2_#{$num}.jpg") center no-repeat;
+    //                         background-size: cover;
+    //                     }
+    //                 }
+    //             }
 
-            .bg {
-                &::after {
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    width: 0%;
-                    height: 0%;
-                    background: rgba(243, 115, 33, 0.8);
-                    transition: 0.4s;
-                    content: "";
-                }
-                &:hover {
-                    &::after {
-                        width: 100%;
-                        height: 100%;
-                    }
-                    .txt {
-                        &_front {
-                            opacity: 0;
-                            transition: 0.1s;
-                            display: none;
-                        }
-                        &_back {
-                            opacity: 1;
-                            transform: translate(-50%, -50%);
-                            transition: 0.8s;
-                        }
-                    }
-                }
-            }
-            h2 {
-                height: 175px;
-                font-weight: 300;
-                font-size: 18px;
-                em {
-                    display: block;
-                    margin-top: 15px;
-                    font-weight: 600;
-                    font-size: 28px;
-                }
+    //             .bg {
+    //                 &::after {
+    //                     position: absolute;
+    //                     top: 50%;
+    //                     left: 50%;
+    //                     transform: translate(-50%, -50%);
+    //                     width: 0%;
+    //                     height: 0%;
+    //                     background: rgba(243, 115, 33, 0.8);
+    //                     transition: 0.4s;
+    //                     content: "";
+    //                 }
+    //                 &:hover {
+    //                     &::after {
+    //                         width: 100%;
+    //                         height: 100%;
+    //                     }
+    //                     .txt {
+    //                         &_front {
+    //                             opacity: 0;
+    //                             transition: 0.1s;
+    //                             display: none;
+    //                         }
+    //                         &_back {
+    //                             opacity: 1;
+    //                             transform: translate(-50%, -50%);
+    //                             transition: 0.8s;
+    //                         }
+    //                     }
+    //                 }
+    //             }
+    //             h2 {
+    //                 height: 175px;
+    //                 font-weight: 300;
+    //                 font-size: 18px;
+    //                 em {
+    //                     display: block;
+    //                     margin-top: 15px;
+    //                     font-weight: 600;
+    //                     font-size: 28px;
+    //                 }
 
-                $icon_list: 1, 2, 3;
-                @each $icon_num in $icon_list {
-                    &.icon_section2_#{$icon_num} {
-                        &::before {
-                            display: block;
-                            width: 85px;
-                            height: 75px;
-                            margin: 0 auto;
-                            margin-bottom: 15px;
-                            background: url("/thetastable/resource/img/icon_section2_#{$icon_num}.png") center no-repeat;
-                            background-size: auto;
-                            content: "";
-                        }
-                    }
-                }
-            }
-            p {
-                margin-top: 10px;
-                font-weight: 300;
-                font-size: 16px;
-                line-height: 1.5;
-            }
-        }
-        .txt {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            z-index: 2;
-            transform: translate(-50%, -50%);
-            width: 100%;
-            text-align: center;
-            color: #fff;
-            &_front {
-                margin-top: 40px;
-                opacity: 0;
-            }
-            &_back {
-                opacity: 0;
-                transform: translate(-50%, -30%);
-            }
-        }
-    }
-    &_03 {
-        .indi_txt {
-            color: #343434;
-        }
-        .txt_area {
-            margin-bottom: 100px;
-            h2 {
-                margin-bottom: 40px;
-                font-weight: 300;
-                font-size: 50px;
-                text-align: center;
-                color: #343434;
-            }
-            em {
-                display: block;
-                margin-bottom: 20px;
-                font-weight: 700;
-                font-size: 16px;
-                color: #f37321;
-            }
-            strong {
-                font-weight: 400;
-            }
-            p {
-                font-weight: 300;
-                text-align: center;
-            }
-        }
-        ul {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            max-width: 1100px;
-            margin: 0 auto;
-            font-size: 0;
-        }
-        li {
-            width: 20%;
-        }
-        .icon {
-            display: block;
-            width: 140px;
-            height: 140px;
-            margin: 0 auto;
-            margin-bottom: 20px;
-            border-radius: 100%;
-            // icon_section3_1
-            $icon_list2: 1, 2, 3, 4, 5;
-            @each $iconNum in $icon_list2 {
-                &_section3_#{$iconNum} {
-                    background: #f37321 url("/thetastable/resource/img/icon_section3_#{$iconNum}.png") center no-repeat;
-                    background-size: auto;
-                }
-            }
-        }
-        .txt_box {
-            text-align: center;
-            span {
-                display: block;
-                margin-bottom: 8px;
-                font-size: 18px;
-                color: #343434;
-            }
-            strong {
-                font-size: 30px;
-            }
-            p {
-                font-weight: 300;
-                font-size: 16px;
-            }
-        }
-    }
-    &_04 {
-        .indi_txt {
-            color: #343434;
-        }
-        .txt_area {
-            margin-bottom: 65px;
-        }
-        .brand_wrap {
-            overflow: hidden;
-            position: relative;
-            width: 100%;
-            height: 485px;
-        }
-        .brand_list {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 750%;
-            max-width: 4125px;
-            // height: 417px;
-            font-size: 0;
-            transition: 0.5s;
-            .brand {
-                display: inline-block;
-                position: relative;
-                width: 14.28%;
-                max-width: 550px;
-                height: 100%;
-                margin-right: 35px;
-                vertical-align: top;
+    //                 $icon_list: 1, 2, 3;
+    //                 @each $icon_num in $icon_list {
+    //                     &.icon_section2_#{$icon_num} {
+    //                         &::before {
+    //                             display: block;
+    //                             width: 85px;
+    //                             height: 75px;
+    //                             margin: 0 auto;
+    //                             margin-bottom: 15px;
+    //                             background: url("/thetastable/resource/img/icon_section2_#{$icon_num}.png") center no-repeat;
+    //                             background-size: auto;
+    //                             content: "";
+    //                         }
+    //                     }
+    //                 }
+    //             }
+    //             p {
+    //                 margin-top: 10px;
+    //                 font-weight: 300;
+    //                 font-size: 16px;
+    //                 line-height: 1.5;
+    //             }
+    //         }
+    //         .txt {
+    //             position: absolute;
+    //             top: 50%;
+    //             left: 50%;
+    //             z-index: 2;
+    //             transform: translate(-50%, -50%);
+    //             width: 100%;
+    //             text-align: center;
+    //             color: #fff;
+    //             &_front {
+    //                 margin-top: 40px;
+    //                 opacity: 0;
+    //             }
+    //             &_back {
+    //                 opacity: 0;
+    //                 transform: translate(-50%, -30%);
+    //             }
+    //         }
+    //     }
+    // }
+    // &_03 {
+    //     .about_area {
+    //         padding: 230px 0;
+    //     }
+    //     .indi_txt {
+    //         color: #343434;
+    //     }
+    //     .txt_area {
+    //         margin-bottom: 100px;
+    //         h2 {
+    //             margin-bottom: 40px;
+    //             font-weight: 300;
+    //             font-size: 50px;
+    //             text-align: center;
+    //             color: #343434;
+    //         }
+    //         em {
+    //             display: block;
+    //             margin-bottom: 20px;
+    //             font-weight: 700;
+    //             font-size: 16px;
+    //             color: #f37321;
+    //         }
+    //         strong {
+    //             font-weight: 400;
+    //         }
+    //         p {
+    //             font-weight: 300;
+    //             text-align: center;
+    //         }
+    //     }
+    //     ul {
+    //         display: flex;
+    //         justify-content: space-between;
+    //         align-items: center;
+    //         width: 100%;
+    //         max-width: 1150px;
+    //         margin: 0 auto;
+    //         font-size: 0;
+    //     }
+    //     li {
+    //         width: 20%;
+    //     }
+    //     .icon {
+    //         display: block;
+    //         width: 140px;
+    //         height: 140px;
+    //         margin: 0 auto;
+    //         margin-bottom: 20px;
+    //         border-radius: 100%;
+    //         // icon_section3_1
+    //         $icon_list2: 1, 2, 3, 4, 5;
+    //         @each $iconNum in $icon_list2 {
+    //             &_section3_#{$iconNum} {
+    //                 background: #f37321 url("/thetastable/resource/img/icon_section3_#{$iconNum}.png") center no-repeat;
+    //                 background-size: auto;
+    //             }
+    //         }
+    //     }
+    //     .txt_box {
+    //         text-align: center;
+    //         span {
+    //             display: block;
+    //             margin-bottom: 8px;
+    //             font-size: 18px;
+    //             color: #343434;
+    //         }
+    //         strong {
+    //             font-size: 30px;
+    //         }
+    //         p {
+    //             font-weight: 300;
+    //             font-size: 16px;
+    //         }
+    //     }
+    // }
+    // &_04 {
+    //     .brand_area {
+    //         padding: 145px 0 90px 0;
+    //     }
+    //     .indi_txt {
+    //         color: #343434;
+    //     }
+    //     .txt_area {
+    //         margin-bottom: 65px;
+    //     }
+    //     .brand_wrap {
+    //         overflow: hidden;
+    //         position: relative;
+    //         height: 485px;
+    //     }
+    //     .brand_list {
+    //         display: flex;
+    //         justify-content: space-between;
+    //         align-items: center;
+    //         position: absolute;
+    //         top: 0;
+    //         left: 0;
+    //         width: 100%;
+    //         width: 4125px;
+    //         height: 417px;
+    //         font-size: 0;
+    //         transition: 0.5s;
+    //         .brand {
+    //             // display: inline-block;
+    //             position: relative;
+    //             width: 14.28%;
+    //             max-width: 550px;
+    //             height: 100%;
+    //             // margin-right: 35px;
+    //             vertical-align: top;
+    //             $bg_list2: 1, 2, 3, 4, 5, 6, 7;
+    //             @each $bgNum in $bg_list2 {
+    //                 &_#{$bgNum} {
+    //                     background: url(/thetastable/resource/img/img_brand#{$bgNum}.jpg) center no-repeat;
+    //                     background-size: 100%;
+    //                 }
+    //             }
+    //             > a {
+    //                 display: inline-block;
+    //                 width: 100%;
+    //                 height: 100%;
+    //             }
+    //             &:last-child {
+    //                 margin-right: 0;
+    //             }
+    //             &::before {
+    //                 position: absolute;
+    //                 top: 0;
+    //                 right: 50%;
+    //                 width: 0%;
+    //                 height: 100%;
+    //                 background: rgba(243, 115, 33, 0.8);
+    //                 content: "";
+    //             }
+    //             &::after {
+    //                 position: absolute;
+    //                 top: 0;
+    //                 left: 50%;
+    //                 width: 0%;
+    //                 height: 100%;
+    //                 background: rgba(243, 115, 33, 0.8);
+    //                 content: "";
+    //             }
+    //             &:hover {
+    //                 p {
+    //                     opacity: 0;
+    //                     transition: 0.2s;
+    //                 }
+    //                 .over {
+    //                     .btn_more {
+    //                         opacity: 1;
+    //                         transition: 0.2s;
+    //                     }
+    //                 }
+    //                 &::before,
+    //                 &::after {
+    //                     width: 50%;
+    //                     transition: 0.3s;
+    //                 }
+    //             }
+    //         }
+    //         .front {
+    //             h3 {
+    //                 position: relative;
+    //                 z-index: 1;
+    //                 width: auto;
+    //                 margin: 45px 0 0 35px;
+    //             }
+    //             p {
+    //                 position: absolute;
+    //                 bottom: 25px;
+    //                 right: 30px;
+    //                 width: auto;
+    //                 height: auto;
+    //                 font-weight: 600;
+    //                 font-size: 20px;
+    //                 color: #fff;
+    //                 opacity: 1;
+    //             }
+    //         }
+    //         .over {
+    //             .btn_more {
+    //                 position: absolute;
+    //                 bottom: 25px;
+    //                 right: 30px;
+    //                 z-index: 2;
+    //                 width: 100px;
+    //                 height: auto;
+    //                 opacity: 0;
+    //                 color: #fff;
+    //             }
+    //         }
+    //     }
+    //     .btn_box {
+    //         position: absolute;
+    //         left: 50%;
+    //         bottom: 3px;
+    //         width: auto;
+    //         height: 18px;
+    //         transform: translateX(-50%);
 
-                > a {
-                    display: inline-block;
-                    width: 100%;
-                    height: 100%;
-                }
-                &:last-child {
-                    margin-right: 0;
-                }
-                &::before {
-                    position: absolute;
-                    top: 0;
-                    right: 50%;
-                    width: 0%;
-                    height: 100%;
-                    background: rgba(243, 115, 33, 0.8);
-                    content: "";
-                }
-                &::after {
-                    position: absolute;
-                    top: 0;
-                    left: 50%;
-                    width: 0%;
-                    height: 100%;
-                    background: rgba(243, 115, 33, 0.8);
-                    content: "";
-                }
-                &:hover {
-                    p {
-                        opacity: 0;
-                        transition: 0.2s;
-                    }
-                    .btn_more {
-                        opacity: 1;
-                        transition: 0.2s;
-                    }
-                    &::before,
-                    &::after {
-                        width: 50%;
-                        transition: 0.3s;
-                    }
-                }
-            }
-            .front {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                $brandLogo: (
-                    "1": (
-                        width: 189px,
-                        height: 62px,
-                    ),
-                    "2": (
-                        width: 78px,
-                        height: 89px,
-                    ),
-                    "3": (
-                        width: 245px,
-                        height: 32px,
-                    ),
-                    "4": (
-                        width: 169px,
-                        height: 34px,
-                    ),
-                    "5": (
-                        width: 208px,
-                        height: 27px,
-                    ),
-                    "6": (
-                        width: 134px,
-                        height: 44px,
-                    ),
-                    "7": (
-                        width: 165px,
-                        height: 41px,
-                    ),
-                );
-                @each $list, $size in $brandLogo {
-                    &_#{$list} {
-                        &::before {
-                            position: absolute;
-                            top: 30px;
-                            left: 30px;
-                            z-index: 1;
-                            width: map-get($size, width);
-                            height: map-get($size, height);
-                            background: url(/thetastable/resource/img/tit_brand#{$list}.png) center no-repeat;
-                            background-size: 100%;
-                            content: "";
-                        }
-                    }
-                }
+    //         .btn {
+    //             display: inline-block;
+    //             width: 4px;
+    //             height: 6px;
+    //             font-size: 0;
+    //             $btnName: prev, next;
+    //             @each $arrowBg in $btnName {
+    //                 &_#{$arrowBg} {
+    //                     background: url(/thetastable/resource/img/btn_swiper_#{$arrowBg}.png) center no-repeat;
+    //                     background-size: 100%;
+    //                 }
+    //             }
+    //         }
+    //         .circle {
+    //             display: inline-block;
+    //             width: 18px;
+    //             height: 18px;
+    //             margin: 0 5px;
+    //             border: 1px solid #f37321;
+    //             border-radius: 100%;
+    //             vertical-align: middle;
+    //         }
+    //     }
+    // }
+    // &_05 {
+    //     .indi_txt {
+    //         color: #343434;
+    //     }
+    //     .inquiry_area {
+    //         .inner {
+    //             &::after {
+    //                 display: block;
+    //                 clear: both;
+    //                 content: "";
+    //             }
+    //         }
+    //         .cont {
+    //             &.left {
+    //                 position: relative;
+    //                 float: left;
+    //                 width: calc(50% - 50px);
+    //                 padding: 140px 100px 175px 0;
+    //                 &::after {
+    //                     position: absolute;
+    //                     top: 100px;
+    //                     right: 0%;
+    //                     width: 1px;
+    //                     height: calc(100vh - 100px);
+    //                     background: #f0f0f0;
+    //                     content: "";
+    //                 }
+    //             }
+    //             &.right {
+    //                 float: left;
+    //                 width: calc(50% + 50px);
+    //                 padding: 230px 100px 0 100px;
+    //             }
+    //         }
+    //         .txt_area {
+    //             margin-bottom: 30px;
+    //             h2,
+    //             p,
+    //             em {
+    //                 text-align: left;
+    //             }
+    //             h2 {
+    //                 font-size: 60px;
+    //             }
+    //         }
+    //         .input_box {
+    //             ul {
+    //                 margin-bottom: 25px;
+    //                 font-size: 0;
+    //             }
+    //             li {
+    //                 padding: 30px 0;
+    //                 border-bottom: 1px solid #f0f0f0;
+    //             }
+    //             label {
+    //                 display: inline-block;
+    //                 width: 125px;
+    //                 font-size: 16px;
+    //                 color: #343434;
+    //                 vertical-align: top;
+    //             }
+    //             input[type="text"] {
+    //                 width: calc(100% - 125px);
+    //                 border: none;
+    //             }
+    //             textarea {
+    //                 width: calc(100% - 125px);
+    //                 height: 100px;
+    //                 border: none;
+    //             }
+    //         }
+    //         .agree_box {
+    //             width: 100%;
+    //             margin-bottom: 80px;
+    //             input[type="checkbox"] {
+    //                 width: 0;
+    //                 height: 0;
+    //                 margin: 0;
+    //             }
+    //             label {
+    //                 position: relative;
+    //                 width: auto;
+    //                 padding-left: 20px;
+    //                 vertical-align: middle;
+    //                 font-size: 14px;
+    //                 color: #8d8d8d;
+    //                 &::before {
+    //                     position: absolute;
+    //                     top: 0;
+    //                     left: 0;
+    //                     width: 15px;
+    //                     height: 15px;
+    //                     border-radius: 100%;
+    //                     border: 1px solid #f0f0f0;
+    //                     box-sizing: border-box;
+    //                     content: "";
+    //                 }
+    //             }
+    //             input[type="checkbox"]:checked + label {
+    //                 &::before {
+    //                     border: 1px solid #f37321;
+    //                 }
+    //                 &::after {
+    //                     position: absolute;
+    //                     top: 3px;
+    //                     left: 3px;
+    //                     width: 9px;
+    //                     height: 9px;
+    //                     border-radius: 100%;
+    //                     background: #f37321;
+    //                     content: "";
+    //                 }
+    //             }
+    //             a {
+    //                 vertical-align: middle;
+    //                 font-size: 14px;
+    //                 color: #8d8d8d;
+    //             }
+    //         }
+    //         .inquiry_box {
+    //             &::after {
+    //                 display: block;
+    //                 clear: both;
+    //                 content: "";
+    //             }
+    //             dl {
+    //                 float: left;
+    //                 width: auto;
+    //                 dt {
+    //                     display: inline-block;
+    //                     font-weight: 700;
+    //                     font-size: 16px;
+    //                     color: #f37321;
+    //                     vertical-align: middle;
+    //                     &::before {
+    //                         display: inline-block;
+    //                         width: 35px;
+    //                         height: 35px;
+    //                         margin-right: 8px;
+    //                         background: url("/thetastable/resource/img/icon_tel.png") center no-repeat;
+    //                         background-size: 100%;
+    //                         vertical-align: middle;
+    //                         content: "";
+    //                     }
+    //                 }
+    //                 dd {
+    //                     display: inline-block;
+    //                     font-weight: 700;
+    //                     font-size: 18px;
+    //                     color: #343434;
+    //                 }
+    //             }
+    //             .btn_inquiry {
+    //                 float: right;
+    //                 position: relative;
+    //                 width: 200px;
+    //                 padding-bottom: 20px;
+    //                 border-bottom: 1px solid #e0e0e0;
+    //                 font-weight: 300;
+    //                 font-size: 15px;
+    //                 &::after {
+    //                     position: absolute;
+    //                     top: 0;
+    //                     right: 0;
+    //                     width: 31px;
+    //                     height: 18px;
+    //                     background: url("/thetastable/resource/img/btn_more_on.png") center no-repeat;
+    //                     background-size: 100%;
+    //                     content: "";
+    //                 }
+    //                 &::before {
+    //                     position: absolute;
+    //                     bottom: -1px;
+    //                     left: 0;
+    //                     width: 0%;
+    //                     height: 1px;
+    //                     background: #f37321;
+    //                     content: "";
+    //                     transition: 0.3s;
+    //                 }
+    //                 &:hover {
+    //                     &::before {
+    //                         width: 100%;
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //         .right_cont {
+    //             .txt_area {
+    //                 p {
+    //                     font-weight: 500;
+    //                     font-size: 24px;
+    //                     color: #343434;
+    //                     line-height: 1.5;
+    //                 }
+    //             }
+    //         }
+    //         .right_top {
+    //             position: relative;
+    //             padding-bottom: 85px;
+    //             &::after {
+    //                 position: absolute;
+    //                 bottom: 0;
+    //                 left: -100px;
+    //                 width: calc(50vw - 58px);
+    //                 height: 1px;
+    //                 background: #f0f0f0;
+    //                 content: "";
+    //             }
+    //             .txt_area {
+    //                 margin-bottom: 55px;
+    //             }
+    //             .inquiry_box {
+    //                 .btn_inquiry {
+    //                     width: 220px;
+    //                 }
+    //             }
+    //         }
+    //         .right_bot {
+    //             padding-top: 100px;
+    //             ul {
+    //                 li {
+    //                     position: relative;
+    //                     padding: 25px 0;
+    //                     border-bottom: 1px solid #e0e0e0;
+    //                 }
+    //                 a {
+    //                     font-weight: 400;
+    //                     font-size: 18px;
+    //                     color: #343434;
 
-                p {
-                    position: absolute;
-                    bottom: 25px;
-                    right: 30px;
-                    width: auto;
-                    height: auto;
-                    font-weight: 600;
-                    font-size: 20px;
-                    color: #fff;
-                    opacity: 1;
-                }
-                .btn_more {
-                    position: absolute;
-                    bottom: 25px;
-                    right: 30px;
-                    z-index: 2;
-                    width: 100px;
-                    height: auto;
-                    opacity: 0;
-                    color: #fff;
-                }
-            }
-        }
-        .btn_box {
-            position: absolute;
-            left: 50%;
-            bottom: 3px;
-            width: auto;
-            height: 18px;
-            transform: translateX(-50%);
-
-            .btn {
-                display: inline-block;
-                width: 4px;
-                height: 6px;
-                font-size: 0;
-                $btnName: prev, next;
-                @each $arrowBg in $btnName {
-                    &_#{$arrowBg} {
-                        background: url(/thetastable/resource/img/btn_swiper_#{$arrowBg}.png) center no-repeat;
-                        background-size: 100%;
-                    }
-                }
-            }
-            .circle {
-                display: inline-block;
-                width: 18px;
-                height: 18px;
-                margin: 0 5px;
-                border: 1px solid #f37321;
-                border-radius: 100%;
-                vertical-align: middle;
-            }
-        }
-    }
-    &_05 {
-        .indi_txt {
-            color: #343434;
-        }
-        .inner {
-            &::after {
-                display: block;
-                clear: both;
-                content: "";
-            }
-        }
-        .cont {
-            &.left {
-                position: relative;
-                float: left;
-                width: calc(50% - 50px);
-                padding: 140px 100px 175px 0;
-                &::after {
-                    position: absolute;
-                    top: 100px;
-                    right: 0%;
-                    width: 1px;
-                    height: calc(100vh - 100px);
-                    background: #f0f0f0;
-                    content: "";
-                }
-            }
-            &.right {
-                float: left;
-                width: calc(50% + 50px);
-                padding: 230px 100px 0 100px;
-            }
-        }
-        .txt_area {
-            margin-bottom: 30px;
-            h2,
-            p,
-            em {
-                text-align: left;
-            }
-            h2 {
-                font-size: 60px;
-            }
-        }
-        .input_box {
-            ul {
-                margin-bottom: 25px;
-                font-size: 0;
-            }
-            li {
-                padding: 30px 0;
-                border-bottom: 1px solid #f0f0f0;
-            }
-            label {
-                display: inline-block;
-                width: 125px;
-                font-size: 16px;
-                color: #343434;
-                vertical-align: top;
-            }
-            input[type="text"] {
-                width: calc(100% - 125px);
-                border: none;
-            }
-            textarea {
-                width: calc(100% - 125px);
-                height: 100px;
-                border: none;
-            }
-        }
-        .agree_box {
-            width: 100%;
-            margin-bottom: 80px;
-            input[type="checkbox"] {
-                width: 0;
-                height: 0;
-                margin: 0;
-            }
-            label {
-                position: relative;
-                width: auto;
-                padding-left: 20px;
-                vertical-align: middle;
-                font-size: 14px;
-                color: #8d8d8d;
-                &::before {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 15px;
-                    height: 15px;
-                    border-radius: 100%;
-                    border: 1px solid #f0f0f0;
-                    box-sizing: border-box;
-                    content: "";
-                }
-            }
-            input[type="checkbox"]:checked + label {
-                &::before {
-                    border: 1px solid #f37321;
-                }
-                &::after {
-                    position: absolute;
-                    top: 3px;
-                    left: 3px;
-                    width: 9px;
-                    height: 9px;
-                    border-radius: 100%;
-                    background: #f37321;
-                    content: "";
-                }
-            }
-            a {
-                vertical-align: middle;
-                font-size: 14px;
-                color: #8d8d8d;
-            }
-        }
-        .inquiry_box {
-            &::after {
-                display: block;
-                clear: both;
-                content: "";
-            }
-            dl {
-                float: left;
-                width: auto;
-                dt {
-                    display: inline-block;
-                    font-weight: 700;
-                    font-size: 16px;
-                    color: #f37321;
-                    vertical-align: middle;
-                    &::before {
-                        display: inline-block;
-                        width: 35px;
-                        height: 35px;
-                        margin-right: 8px;
-                        background: url("/thetastable/resource/img/icon_tel.png") center no-repeat;
-                        background-size: 100%;
-                        vertical-align: middle;
-                        content: "";
-                    }
-                }
-                dd {
-                    display: inline-block;
-                    font-weight: 700;
-                    font-size: 18px;
-                    color: #343434;
-                }
-            }
-            .btn_inquiry {
-                float: right;
-                position: relative;
-                width: 200px;
-                padding-bottom: 20px;
-                border-bottom: 1px solid #e0e0e0;
-                font-weight: 300;
-                font-size: 15px;
-                &::after {
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    width: 31px;
-                    height: 18px;
-                    background: url("/thetastable/resource/img/btn_more_on.png") center no-repeat;
-                    background-size: 100%;
-                    content: "";
-                }
-                &::before {
-                    position: absolute;
-                    bottom: -1px;
-                    left: 0;
-                    width: 0%;
-                    height: 1px;
-                    background: #f37321;
-                    content: "";
-                    transition: 0.3s;
-                }
-                &:hover {
-                    &::before {
-                        width: 100%;
-                    }
-                }
-            }
-        }
-        .right_cont {
-            .txt_area {
-                p {
-                    font-weight: 500;
-                    font-size: 24px;
-                    color: #343434;
-                    line-height: 1.5;
-                }
-            }
-        }
-        .right_top {
-            position: relative;
-            padding-bottom: 85px;
-            &::after {
-                position: absolute;
-                bottom: 0;
-                left: -100px;
-                width: calc(50vw - 58px);
-                height: 1px;
-                background: #f0f0f0;
-                content: "";
-            }
-            .txt_area {
-                margin-bottom: 55px;
-            }
-            .inquiry_box {
-                .btn_inquiry {
-                    width: 220px;
-                }
-            }
-        }
-        .right_bot {
-            padding-top: 100px;
-            ul {
-                li {
-                    position: relative;
-                    padding: 25px 0;
-                    border-bottom: 1px solid #e0e0e0;
-                }
-                a {
-                    font-weight: 400;
-                    font-size: 18px;
-                    color: #343434;
-
-                    &::before {
-                        position: absolute;
-                        top: 50%;
-                        right: 5px;
-                        width: 10px;
-                        height: 10px;
-                        transform: scale(0);
-                        background: #f37321;
-                        border-radius: 100%;
-                        transition: 0.3s;
-                        content: "";
-                    }
-                    &::after {
-                        position: absolute;
-                        bottom: -1px;
-                        left: 0;
-                        width: 0%;
-                        height: 1px;
-                        background: #f37321;
-                        transition: 0.3s;
-                        content: "";
-                    }
-                    &:hover {
-                        &::before {
-                            transform: scale(1);
-                        }
-                        &::after {
-                            width: 100%;
-                        }
-                    }
-                }
-            }
-        }
-    }
+    //                     &::before {
+    //                         position: absolute;
+    //                         top: 50%;
+    //                         right: 5px;
+    //                         width: 10px;
+    //                         height: 10px;
+    //                         transform: scale(0);
+    //                         background: #f37321;
+    //                         border-radius: 100%;
+    //                         transition: 0.3s;
+    //                         content: "";
+    //                     }
+    //                     &::after {
+    //                         position: absolute;
+    //                         bottom: -1px;
+    //                         left: 0;
+    //                         width: 0%;
+    //                         height: 1px;
+    //                         background: #f37321;
+    //                         transition: 0.3s;
+    //                         content: "";
+    //                     }
+    //                     &:hover {
+    //                         &::before {
+    //                             transform: scale(1);
+    //                         }
+    //                         &::after {
+    //                             width: 100%;
+    //                         }
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
 }

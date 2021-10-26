@@ -120,7 +120,7 @@
 
 .header::after { position: absolute; bottom: 0; left: 0; z-index: 1000; width: 100%; height: 1px; background: rgba(255, 255, 255, 0.2); content: ""; }
 
-.header .header_inner { position: relative; padding: 30px 0; height: 100px; -webkit-box-sizing: border-box; box-sizing: border-box; }
+.header .header_inner { position: relative; height: 100px; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
 .header .header_inner::after { -webkit-transition: 1s; transition: 1s; position: absolute; top: 100px; left: 0; z-index: 1000; width: 0; height: 1px; background: #e5e5e5; content: ""; }
 
@@ -130,13 +130,15 @@
 
 .header .logo a { display: block; height: 100%; background: url("/thetastable/resource/img/logo.png") center no-repeat; background-size: 100%; }
 
-.header .gnb { display: block; position: absolute; top: 0%; left: 50%; width: 755px; height: 100px; -webkit-transform: translateX(-50%); -ms-transform: translateX(-50%); transform: translateX(-50%); }
+.header .gnb { position: relative; height: auto; }
 
-.header .gnb ul { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; }
+.header .gnb > ul { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; position: absolute; top: 0%; left: 50%; width: 100%; width: 755px; height: 100%; -webkit-transform: translateX(-50%); -ms-transform: translateX(-50%); transform: translateX(-50%); }
 
-.header .gnb .depth_wrap { display: inline-block; width: auto; text-align: center; vertical-align: text-top; }
+.header .gnb .depth_wrap { -ms-flex-negative: 0; flex-shrink: 0; -ms-flex-preferred-size: 18%; flex-basis: 18%; text-align: center; }
 
-.header .gnb .depth1 { display: block; padding: 40px 27px; font-weight: 400; font-size: 18px; color: #fff; -webkit-transition: 0.2s; transition: 0.2s; }
+.header .gnb .depth_wrap:last-child { -webkit-box-flex: 1.5; -ms-flex-positive: 1.5; flex-grow: 1.5; }
+
+.header .gnb .depth1 { display: block; padding: 40px 27px; font-weight: 400; font-size: 17px; color: #fff; -webkit-transition: 0.2s; transition: 0.2s; }
 
 .header .gnb .depth1.active { background: #f37321; color: #fff !important; }
 
@@ -152,7 +154,9 @@
 
 .header .util .search_wrap { display: inline-block; width: 270px; font-size: 0; vertical-align: middle; }
 
-.header .util input[type="text"] { width: 180px; padding: 0 5px; background: none; border: none; border-bottom: 1px solid rgba(255, 255, 255, 0.2); vertical-align: bottom; }
+.header .util .search_wrap.on input[type="text"] { width: 180px; border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
+
+.header .util input[type="text"] { visibility: hidden; width: 180px; padding: 0 5px; background: none; border: none; vertical-align: bottom; }
 
 .header .util .burger { display: inline-block; position: relative; width: 100px; height: 100px; vertical-align: middle; }
 
@@ -312,8 +316,6 @@
 
 .sect.active .indi_txt { opacity: 1; }
 
-.sect .sect_cont { padding-top: 100px; }
-
 .sect .indi_txt { position: absolute; bottom: 67px; right: 345px; z-index: 2; font-weight: 300; font-size: 12px; color: #fff; opacity: 0; -webkit-transition: 0.2s; transition: 0.2s; }
 
 .sect .txt_area { margin-bottom: 100px; }
@@ -330,11 +332,9 @@
 
 .sect .btn_more::after { position: absolute; top: 0; right: 0; width: 25px; height: 16px; background: url("/thetastable/resource/img/btn_more.png") center no-repeat; background-size: 100%; content: ""; }
 
-.sect .area_vdo { position: relative; width: 100%; }
+.sect_01 .vdo_area { position: relative; width: 100%; }
 
-.sect .area_vdo video { position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); width: auto; height: auto; min-width: 100%; min-height: 100%; -o-object-fit: cover; object-fit: cover; }
-
-.sect .area_business { height: 100%; }
+.sect_01 .vdo_area video { position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); width: auto; height: auto; min-width: 100%; min-height: 100%; -o-object-fit: cover; object-fit: cover; }
 
 .sect_01 .txt_area { position: absolute; bottom: 85px; left: 0; -webkit-animation: show 0.5s linear; animation: show 0.5s linear; }
 
@@ -355,211 +355,3 @@
   to { opacity: 1;
     -webkit-transform: translateX(0px);
             transform: translateX(0px); } }
-
-.sect_02 ul { width: 100%; height: 100%; font-size: 0; }
-
-.sect_02 li { display: inline-block; position: relative; width: 33.33%; height: 100%; }
-
-.sect_02 li.section2_1 .bg { width: 0; height: 100%; background: url("/thetastable/resource/img/img_section2_1.jpg") center no-repeat; background-size: cover; }
-
-.sect_02 li.section2_2 .bg { width: 0; height: 100%; background: url("/thetastable/resource/img/img_section2_2.jpg") center no-repeat; background-size: cover; }
-
-.sect_02 li.section2_3 .bg { width: 0; height: 100%; background: url("/thetastable/resource/img/img_section2_3.jpg") center no-repeat; background-size: cover; }
-
-.sect_02 li .bg::after { position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); width: 0%; height: 0%; background: rgba(243, 115, 33, 0.8); -webkit-transition: 0.4s; transition: 0.4s; content: ""; }
-
-.sect_02 li .bg:hover::after { width: 100%; height: 100%; }
-
-.sect_02 li .bg:hover .txt_front { opacity: 0; -webkit-transition: 0.1s; transition: 0.1s; display: none; }
-
-.sect_02 li .bg:hover .txt_back { opacity: 1; -webkit-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); -webkit-transition: 0.8s; transition: 0.8s; }
-
-.sect_02 li h2 { height: 175px; font-weight: 300; font-size: 18px; }
-
-.sect_02 li h2 em { display: block; margin-top: 15px; font-weight: 600; font-size: 28px; }
-
-.sect_02 li h2.icon_section2_1::before { display: block; width: 85px; height: 75px; margin: 0 auto; margin-bottom: 15px; background: url("/thetastable/resource/img/icon_section2_1.png") center no-repeat; background-size: auto; content: ""; }
-
-.sect_02 li h2.icon_section2_2::before { display: block; width: 85px; height: 75px; margin: 0 auto; margin-bottom: 15px; background: url("/thetastable/resource/img/icon_section2_2.png") center no-repeat; background-size: auto; content: ""; }
-
-.sect_02 li h2.icon_section2_3::before { display: block; width: 85px; height: 75px; margin: 0 auto; margin-bottom: 15px; background: url("/thetastable/resource/img/icon_section2_3.png") center no-repeat; background-size: auto; content: ""; }
-
-.sect_02 li p { margin-top: 10px; font-weight: 300; font-size: 16px; line-height: 1.5; }
-
-.sect_02 .txt { position: absolute; top: 50%; left: 50%; z-index: 2; -webkit-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); width: 100%; text-align: center; color: #fff; }
-
-.sect_02 .txt_front { margin-top: 40px; opacity: 0; }
-
-.sect_02 .txt_back { opacity: 0; -webkit-transform: translate(-50%, -30%); -ms-transform: translate(-50%, -30%); transform: translate(-50%, -30%); }
-
-.sect_03 .indi_txt { color: #343434; }
-
-.sect_03 .txt_area { margin-bottom: 100px; }
-
-.sect_03 .txt_area h2 { margin-bottom: 40px; font-weight: 300; font-size: 50px; text-align: center; color: #343434; }
-
-.sect_03 .txt_area em { display: block; margin-bottom: 20px; font-weight: 700; font-size: 16px; color: #f37321; }
-
-.sect_03 .txt_area strong { font-weight: 400; }
-
-.sect_03 .txt_area p { font-weight: 300; text-align: center; }
-
-.sect_03 ul { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; -webkit-box-align: center; -ms-flex-align: center; align-items: center; width: 100%; max-width: 1100px; margin: 0 auto; font-size: 0; }
-
-.sect_03 li { width: 20%; }
-
-.sect_03 .icon { display: block; width: 140px; height: 140px; margin: 0 auto; margin-bottom: 20px; border-radius: 100%; }
-
-.sect_03 .icon_section3_1 { background: #f37321 url("/thetastable/resource/img/icon_section3_1.png") center no-repeat; background-size: auto; }
-
-.sect_03 .icon_section3_2 { background: #f37321 url("/thetastable/resource/img/icon_section3_2.png") center no-repeat; background-size: auto; }
-
-.sect_03 .icon_section3_3 { background: #f37321 url("/thetastable/resource/img/icon_section3_3.png") center no-repeat; background-size: auto; }
-
-.sect_03 .icon_section3_4 { background: #f37321 url("/thetastable/resource/img/icon_section3_4.png") center no-repeat; background-size: auto; }
-
-.sect_03 .icon_section3_5 { background: #f37321 url("/thetastable/resource/img/icon_section3_5.png") center no-repeat; background-size: auto; }
-
-.sect_03 .txt_box { text-align: center; }
-
-.sect_03 .txt_box span { display: block; margin-bottom: 8px; font-size: 18px; color: #343434; }
-
-.sect_03 .txt_box strong { font-size: 30px; }
-
-.sect_03 .txt_box p { font-weight: 300; font-size: 16px; }
-
-.sect_04 .indi_txt { color: #343434; }
-
-.sect_04 .txt_area { margin-bottom: 65px; }
-
-.sect_04 .brand_wrap { overflow: hidden; position: relative; width: 100%; height: 485px; }
-
-.sect_04 .brand_list { position: absolute; top: 0; left: 0; width: 750%; max-width: 4125px; font-size: 0; -webkit-transition: 0.5s; transition: 0.5s; }
-
-.sect_04 .brand_list .brand { display: inline-block; position: relative; width: 14.28%; max-width: 550px; height: 100%; margin-right: 35px; vertical-align: top; }
-
-.sect_04 .brand_list .brand > a { display: inline-block; width: 100%; height: 100%; }
-
-.sect_04 .brand_list .brand:last-child { margin-right: 0; }
-
-.sect_04 .brand_list .brand::before { position: absolute; top: 0; right: 50%; width: 0%; height: 100%; background: rgba(243, 115, 33, 0.8); content: ""; }
-
-.sect_04 .brand_list .brand::after { position: absolute; top: 0; left: 50%; width: 0%; height: 100%; background: rgba(243, 115, 33, 0.8); content: ""; }
-
-.sect_04 .brand_list .brand:hover p { opacity: 0; -webkit-transition: 0.2s; transition: 0.2s; }
-
-.sect_04 .brand_list .brand:hover .btn_more { opacity: 1; -webkit-transition: 0.2s; transition: 0.2s; }
-
-.sect_04 .brand_list .brand:hover::before, .sect_04 .brand_list .brand:hover::after { width: 50%; -webkit-transition: 0.3s; transition: 0.3s; }
-
-.sect_04 .brand_list .front { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-
-.sect_04 .brand_list .front_1::before { position: absolute; top: 30px; left: 30px; z-index: 1; width: 189px; height: 62px; background: url(/thetastable/resource/img/tit_brand1.png) center no-repeat; background-size: 100%; content: ""; }
-
-.sect_04 .brand_list .front_2::before { position: absolute; top: 30px; left: 30px; z-index: 1; width: 78px; height: 89px; background: url(/thetastable/resource/img/tit_brand2.png) center no-repeat; background-size: 100%; content: ""; }
-
-.sect_04 .brand_list .front_3::before { position: absolute; top: 30px; left: 30px; z-index: 1; width: 245px; height: 32px; background: url(/thetastable/resource/img/tit_brand3.png) center no-repeat; background-size: 100%; content: ""; }
-
-.sect_04 .brand_list .front_4::before { position: absolute; top: 30px; left: 30px; z-index: 1; width: 169px; height: 34px; background: url(/thetastable/resource/img/tit_brand4.png) center no-repeat; background-size: 100%; content: ""; }
-
-.sect_04 .brand_list .front_5::before { position: absolute; top: 30px; left: 30px; z-index: 1; width: 208px; height: 27px; background: url(/thetastable/resource/img/tit_brand5.png) center no-repeat; background-size: 100%; content: ""; }
-
-.sect_04 .brand_list .front_6::before { position: absolute; top: 30px; left: 30px; z-index: 1; width: 134px; height: 44px; background: url(/thetastable/resource/img/tit_brand6.png) center no-repeat; background-size: 100%; content: ""; }
-
-.sect_04 .brand_list .front_7::before { position: absolute; top: 30px; left: 30px; z-index: 1; width: 165px; height: 41px; background: url(/thetastable/resource/img/tit_brand7.png) center no-repeat; background-size: 100%; content: ""; }
-
-.sect_04 .brand_list .front p { position: absolute; bottom: 25px; right: 30px; width: auto; height: auto; font-weight: 600; font-size: 20px; color: #fff; opacity: 1; }
-
-.sect_04 .brand_list .front .btn_more { position: absolute; bottom: 25px; right: 30px; z-index: 2; width: 100px; height: auto; opacity: 0; color: #fff; }
-
-.sect_04 .btn_box { position: absolute; left: 50%; bottom: 3px; width: auto; height: 18px; -webkit-transform: translateX(-50%); -ms-transform: translateX(-50%); transform: translateX(-50%); }
-
-.sect_04 .btn_box .btn { display: inline-block; width: 4px; height: 6px; font-size: 0; }
-
-.sect_04 .btn_box .btn_prev { background: url(/thetastable/resource/img/btn_swiper_prev.png) center no-repeat; background-size: 100%; }
-
-.sect_04 .btn_box .btn_next { background: url(/thetastable/resource/img/btn_swiper_next.png) center no-repeat; background-size: 100%; }
-
-.sect_04 .btn_box .circle { display: inline-block; width: 18px; height: 18px; margin: 0 5px; border: 1px solid #f37321; border-radius: 100%; vertical-align: middle; }
-
-.sect_05 .indi_txt { color: #343434; }
-
-.sect_05 .inner::after { display: block; clear: both; content: ""; }
-
-.sect_05 .cont.left { position: relative; float: left; width: calc(50% - 50px); padding: 140px 100px 175px 0; }
-
-.sect_05 .cont.left::after { position: absolute; top: 100px; right: 0%; width: 1px; height: calc(100vh - 100px); background: #f0f0f0; content: ""; }
-
-.sect_05 .cont.right { float: left; width: calc(50% + 50px); padding: 230px 100px 0 100px; }
-
-.sect_05 .txt_area { margin-bottom: 30px; }
-
-.sect_05 .txt_area h2, .sect_05 .txt_area p, .sect_05 .txt_area em { text-align: left; }
-
-.sect_05 .txt_area h2 { font-size: 60px; }
-
-.sect_05 .input_box ul { margin-bottom: 25px; font-size: 0; }
-
-.sect_05 .input_box li { padding: 30px 0; border-bottom: 1px solid #f0f0f0; }
-
-.sect_05 .input_box label { display: inline-block; width: 125px; font-size: 16px; color: #343434; vertical-align: top; }
-
-.sect_05 .input_box input[type="text"] { width: calc(100% - 125px); border: none; }
-
-.sect_05 .input_box textarea { width: calc(100% - 125px); height: 100px; border: none; }
-
-.sect_05 .agree_box { width: 100%; margin-bottom: 80px; }
-
-.sect_05 .agree_box input[type="checkbox"] { width: 0; height: 0; margin: 0; }
-
-.sect_05 .agree_box label { position: relative; width: auto; padding-left: 20px; vertical-align: middle; font-size: 14px; color: #8d8d8d; }
-
-.sect_05 .agree_box label::before { position: absolute; top: 0; left: 0; width: 15px; height: 15px; border-radius: 100%; border: 1px solid #f0f0f0; -webkit-box-sizing: border-box; box-sizing: border-box; content: ""; }
-
-.sect_05 .agree_box input[type="checkbox"]:checked + label::before { border: 1px solid #f37321; }
-
-.sect_05 .agree_box input[type="checkbox"]:checked + label::after { position: absolute; top: 3px; left: 3px; width: 9px; height: 9px; border-radius: 100%; background: #f37321; content: ""; }
-
-.sect_05 .agree_box a { vertical-align: middle; font-size: 14px; color: #8d8d8d; }
-
-.sect_05 .inquiry_box::after { display: block; clear: both; content: ""; }
-
-.sect_05 .inquiry_box dl { float: left; width: auto; }
-
-.sect_05 .inquiry_box dl dt { display: inline-block; font-weight: 700; font-size: 16px; color: #f37321; vertical-align: middle; }
-
-.sect_05 .inquiry_box dl dt::before { display: inline-block; width: 35px; height: 35px; margin-right: 8px; background: url("/thetastable/resource/img/icon_tel.png") center no-repeat; background-size: 100%; vertical-align: middle; content: ""; }
-
-.sect_05 .inquiry_box dl dd { display: inline-block; font-weight: 700; font-size: 18px; color: #343434; }
-
-.sect_05 .inquiry_box .btn_inquiry { float: right; position: relative; width: 200px; padding-bottom: 20px; border-bottom: 1px solid #e0e0e0; font-weight: 300; font-size: 15px; }
-
-.sect_05 .inquiry_box .btn_inquiry::after { position: absolute; top: 0; right: 0; width: 31px; height: 18px; background: url("/thetastable/resource/img/btn_more_on.png") center no-repeat; background-size: 100%; content: ""; }
-
-.sect_05 .inquiry_box .btn_inquiry::before { position: absolute; bottom: -1px; left: 0; width: 0%; height: 1px; background: #f37321; content: ""; -webkit-transition: 0.3s; transition: 0.3s; }
-
-.sect_05 .inquiry_box .btn_inquiry:hover::before { width: 100%; }
-
-.sect_05 .right_cont .txt_area p { font-weight: 500; font-size: 24px; color: #343434; line-height: 1.5; }
-
-.sect_05 .right_top { position: relative; padding-bottom: 85px; }
-
-.sect_05 .right_top::after { position: absolute; bottom: 0; left: -100px; width: calc(50vw - 58px); height: 1px; background: #f0f0f0; content: ""; }
-
-.sect_05 .right_top .txt_area { margin-bottom: 55px; }
-
-.sect_05 .right_top .inquiry_box .btn_inquiry { width: 220px; }
-
-.sect_05 .right_bot { padding-top: 100px; }
-
-.sect_05 .right_bot ul li { position: relative; padding: 25px 0; border-bottom: 1px solid #e0e0e0; }
-
-.sect_05 .right_bot ul a { font-weight: 400; font-size: 18px; color: #343434; }
-
-.sect_05 .right_bot ul a::before { position: absolute; top: 50%; right: 5px; width: 10px; height: 10px; -webkit-transform: scale(0); -ms-transform: scale(0); transform: scale(0); background: #f37321; border-radius: 100%; -webkit-transition: 0.3s; transition: 0.3s; content: ""; }
-
-.sect_05 .right_bot ul a::after { position: absolute; bottom: -1px; left: 0; width: 0%; height: 1px; background: #f37321; -webkit-transition: 0.3s; transition: 0.3s; content: ""; }
-
-.sect_05 .right_bot ul a:hover::before { -webkit-transform: scale(1); -ms-transform: scale(1); transform: scale(1); }
-
-.sect_05 .right_bot ul a:hover::after { width: 100%; }
