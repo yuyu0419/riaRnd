@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import "mixin";
+@import "variables";
 
 /* font */
 @font-face {
@@ -184,12 +185,6 @@ textarea {
     border: 0;
 }
 .ir {
-    overflow: hidden;
-    position: absolute;
-    width: 0;
-    height: 0;
-    line-height: 0;
-    text-indent: -9999px;
     @include wordHide;
 }
 /* HTML5 display-role reset for older browsers */

@@ -1,3 +1,5 @@
+@import "./variables";
+
 @mixin wordHide {
     overflow: hidden;
     position: absolute;
@@ -5,4 +7,59 @@
     height: 0;
     line-height: 0;
     text-indent: -9999px;
+}
+
+@mixin clearFix {
+    &::after {
+        display: block;
+        clear: both;
+        content: "";
+    }
+}
+@mixin flexBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin desktop {
+    @media (min-width:#{$breakpoint-tablet} + 1) and (max-width:#{$breakpoint-desktop}) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media (min-width:#{$breakpoint-mobile} + 1) and (max-width:#{$breakpoint-tablet}) {
+        @content;
+    }
+}
+@mixin mobile {
+    @media (min-width:all) and (max-width:#{$breakpoint-mobile}) {
+        @content;
+    }
+}
+
+@mixin background($img, $position: null, $repeat: null, $size: null, $bgColor: null) {
+    /// ❗ 필수값
+    /// $img : 이미지 파일명 => 'logo.png'
+
+    /// ❓ 선택값
+    /// 하나씩 쓸 경우엔 지시자 지정 필수 => @include background('logo.png', $repeat: no-repeat); 👈 "$repeat"
+    /// $position : position, $repeat : repeat, $size : size
+
+    @if $position == null {
+        // background position 값이 없을 때
+        background-image: url("#{$imgPath}#{$img}");
+        background-repeat: $repeat;
+    } @else if $repeat == null {
+        // background repeat 값이 없을 때
+        background-image: url("#{$imgPath}#{$img}");
+        background-position: $position;
+    } @else {
+        // bgColor, position 값이 둘 다 있을 때
+        background: url("#{$imgPath}#{$img}") $position $repeat;
+    }
+
+    // background size, backgorund color 값이 있으면 반환, 없으면 생략
+    background-size: $size;
+    background-color: $bgColor;
 }
