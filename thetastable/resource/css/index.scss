@@ -350,7 +350,7 @@
 .inner {
     position: relative;
     width: 100%;
-    padding: 0 5.2%;
+    padding: 0 100px;
 }
 
 .header {
@@ -1011,13 +1011,13 @@
             }
         }
         &_brand {
-            overflow: hidden;
+            //overflow: hidden;
             // .txt_area {
             //     margin: 0 0 50px 0;
             // }
-            .inner {
-                padding: 0 100px 0 5.2%;
-            }
+            // .inner {
+            //     padding: 0 100px 0 5.2%;
+            // }
         }
         &_inquiry {
         }
@@ -1429,7 +1429,7 @@
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            padding: 100px 100px 0 5.2%;
+            padding: 100px 100px 0 100px;
             // @include clearFix;
         }
         .cont {
