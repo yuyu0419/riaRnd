@@ -326,7 +326,7 @@
         .btn_top {
             position: absolute;
             right: 36px;
-            bottom: 0px;
+            bottom: -100%;
             width: auto;
             opacity: 0;
             a {
@@ -771,7 +771,7 @@
     border-top: 1px solid #cccccc;
     .footer_inner {
         width: 100%;
-        padding: 65px 50px;
+        padding: 65px 100px 65px 50px;
         @include background("img_logo_b.png", 50px 52px, no-repeat);
         &::after {
             display: block;
@@ -781,8 +781,11 @@
     }
     .left {
         float: left;
-        width: 50%;
+        width: 45%;
         padding-left: 230px;
+        @include desktop {
+            padding-left: 200px;
+        }
         p {
             margin-bottom: 15px;
             font-size: 14px;
@@ -794,9 +797,9 @@
         }
     }
     .right {
-        float: right;
-        width: 50%;
-        padding-right: 80px;
+        float: left;
+        width: 55%;
+        padding-right: 50px;
     }
     .tel_wrap {
         margin: 0 -10px 35px -10px;
@@ -824,16 +827,27 @@
     .privasy_wrap {
         margin-bottom: 22px;
         text-align: right;
-        margin: 0 -10px;
         margin-bottom: 24px;
+        font-size: 0;
         li {
             display: inline-block;
             width: auto;
-            padding: 0 10px;
-            border-left: 1px solid #e0e0e0;
+            padding-left: 10px;
             vertical-align: middle;
             &:first-child {
+                position: relative;
+                padding-right: 10px;
+                padding-left: 0;
                 border-left: 0;
+                &::after {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 1px;
+                    height: 14px;
+                    background: #e0e0e0;
+                    content: "";
+                }
             }
         }
         a {
@@ -1012,9 +1026,7 @@
         }
         &_brand {
             //overflow: hidden;
-            // .txt_area {
-            //     margin: 0 0 50px 0;
-            // }
+
             // .inner {
             //     padding: 0 100px 0 5.2%;
             // }
@@ -1230,10 +1242,25 @@
         .indi_txt {
             color: #343434;
         }
+        .txt_area {
+            transform: translateY(50px);
+            opacity: 0;
+            &.on {
+                transition: 0.3s;
+                transform: translateY(0px);
+            }
+        }
+
         .brand_wrap {
             overflow: hidden;
             position: relative;
             width: 100%;
+            transform: translateY(50px);
+            opacity: 0;
+            &.on {
+                transition: 0.3s;
+                transform: translateY(0px);
+            }
         }
         .swiper-container {
             margin-bottom: 30px;
@@ -1432,6 +1459,7 @@
             padding: 100px 100px 0 100px;
             // @include clearFix;
         }
+
         .cont {
             &.left {
                 position: relative;
@@ -1609,14 +1637,18 @@
             }
         }
         .right_cont {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             position: relative;
             width: 100%;
             height: calc(50vh - 50px);
-            padding: 0 0 0 100px;
+            // padding: 0 0 0 100px;
             &:last-child {
-                padding: 50px 100px 0px;
+                padding: 0 100px;
             }
             .txt_area {
+                margin-top: 0;
                 p {
                     font-weight: 500;
                     font-size: 24px;
@@ -1626,10 +1658,6 @@
             }
         }
         .right_top {
-            // position: absolute;
-            // top: 50%;
-            // left: 100px;
-            // transform: translate(-50%, 0);
             &::after {
                 position: absolute;
                 bottom: 0;
@@ -1639,21 +1667,13 @@
                 background: #f0f0f0;
                 content: "";
             }
-            .txt_area {
-                // margin: 0;
-            }
             .inquiry_box {
-                margin-right: 100px;
                 .btn_inquiry {
                     width: 220px;
                 }
             }
         }
         .right_bot {
-            // position: absolute;
-            // top: 50%;
-            // left: 100px;
-            // transform: translate(-50%, 0);
             .txt_area {
                 margin: 0;
             }
