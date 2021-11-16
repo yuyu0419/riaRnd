@@ -1,10 +1,5 @@
+
 var thetastable = thetastable || {};
-// $(document).ready(function(){
-//     $("#header").load("/thetastable/include/header.html")    
-//     $("#footer").load("/thetastable/include/footer.html")    
-// });
-
-
 var $body = $("body"),
     $wrap = $(".wrap"),
     $header = $(".header"),
@@ -20,6 +15,10 @@ var $body = $("body"),
     i = 0,
     isWheel = true;
 
+// $(document).ready(function(){
+//     $("#header").load("/thetastable/include/header.html")    
+//     $("#footer").load("/thetastable/include/footer.html")    
+// });
     
 
 thetastable = {
@@ -162,61 +161,38 @@ thetastable = {
                 }
             }
         }();
-        var brandSwiper = new Swiper('.swiper-container', {
-            slidesPerView:3,
-            spaceBetween:35,
-            breakpoint:{
-                
-                767:{},
-                1023:{
-                    // slidesPerView:2,
-                    // spaceBetween:30,
-                },
-                1336:{
-                    
-                },
-                1440:{
-                    slidesPerView:2,
-                    spaceBetween:30,                    
-                },
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },            
-        });
         // brand list 슬라이드 모션
-        // var slide = function(){
-        //     var $brandWrap = $(".brand_wrap"),
-        //         $list = $brandWrap.find(".brand_list"),
-        //         $brand = $list.find(".brand"),
-        //         $btn = $brandWrap.find(".btn"),
-        //         cnt = 0;
+        var slide = function(){
+            var $brandWrap = $(".brand_wrap"),
+                $list = $brandWrap.find(".brand_list"),
+                $brand = $list.find(".brand"),
+                $btn = $brandWrap.find(".btn"),
+                cnt = 0;
         
-        //     $btn.each(function(i,key){
-        //         $(key).on("click",function(){
-        //             if($(key).is(".btn_prev")){
-        //                 if(cnt > 0){
-        //                     cnt--;
-        //                 }
-        //             }else{
-        //                 if(cnt < $brand.length / 2){
-        //                     cnt++;
-        //                 }
-        //             }
-        //             sliding();
-        //         })
-        //     })
+            $btn.each(function(i,key){
+                $(key).on("click",function(){
+                    if($(key).is(".btn_prev")){
+                        if(cnt > 0){
+                            cnt--;
+                        }
+                    }else{
+                        if(cnt < $brand.length / 2){
+                            cnt++;
+                        }
+                    }
+                    sliding();
+                })
+            })
             
-        //     function sliding(){
-        //         $brand.each(function(idx,target){
-        //             var $brandWidth = $brand.width(),
-        //                 margin35 = Number(35);
+            function sliding(){
+                $brand.each(function(idx,target){
+                    var $brandWidth = $brand.width(),
+                        margin35 = Number(35);
         
-        //             $list.css("left",(-($brandWidth + margin35) * cnt));
-        //         })
-        //     }
-        // }();
+                    $list.css("left",(-($brandWidth + margin35) * cnt));
+                })
+            }
+        }();
     },
 
     // 마우스 휠 이벤트 top값
@@ -271,27 +247,24 @@ thetastable = {
                             isWheel = true;
                         },300);
                     });
+                    console.log(-(sectInnerH * (i - 1)) + -(footH))
                     $header.addClass("hidden");
                 }
+                
+                console.log(i, -(sectInnerH * (i - 1)),-(footH))
                 
                 topBtn(i);
                 sectAnimate(i);
             }
 
             function topBtn(topI){
-                $btnTop.find("a").on("click",function(){
+                $btnTop.on("click",function(){
                     i = 0;
                     $mainWrap.stop().animate({"top": i},100,"linear");
 
                     mainMove(i);
                     sectAnimate(i);
                 })
-                if(!$sect.is(".active")){
-                    console.log("dfdfdf")
-                    $rightSect.find($btnTop).stop().animate({
-                        "bottom":"-100%"
-                    },500,"swing");
-                }
             }
 
             function sectAnimate(i){
@@ -343,38 +316,18 @@ thetastable = {
                     }else{
                         $(".wrap").removeClass("black");
                     }
-                    if(i == 3){
-                        setTimeout(function(){
-                            $(".area_brand").find(".txt_area").stop().animate({
-                                "opacity":"1"
-                            },{
-                                duration:"100",
-                                step:function(){
-                                    $(".area_brand").find(".txt_area").addClass("on");
-                                }
-                            });
 
-                            $(".brand_wrap").stop().animate({
-                                "opacity":"1"
-                            },{
-                                duration:"100",
-                                step:function(){
-                                    $(".brand_wrap").addClass("on");
-                                }
-                            });
-                        },400);
-                    }
-                    
-                    if(i == 4){
+                    if(i >= 4){
                         $rightSect.find(".scroll").css('opacity','0');
                         $rightSect.find($btnTop).stop().animate({
                             "opacity":"1",
                             "bottom":"60px"
                         },500,"swing");
-                    } else {
+
+                    }else{
                         $rightSect.find(".scroll").css('opacity','1');
                         $rightSect.find($btnTop).stop().animate({
-                            "bottom":"-100%",
+                            "bottom":"0px",
                             "opacity":"0"
                         },500,"swing");
                     }
@@ -461,19 +414,13 @@ thetastable = {
                 }
     
                 function topBtn(topI){
-                    $btnTop.find("a").on("click",function(){
+                    $btnTop.on("click",function(){
                         i = 0;
                         $mainWrap.stop().animate({"top": i},100,"linear");
     
                         mainMove(i);
                         sectAnimate(i);
                     })
-
-                    if(!$sect.is(".active")){
-                        $rightSect.find($btnTop).stop().animate({
-                            "bottom":"-100%"
-                        },500,"swing");
-                    }
                 }
     
                 function sectAnimate(i){
@@ -525,39 +472,18 @@ thetastable = {
                         }else{
                             $(".wrap").removeClass("black");
                         }
-
-                        if(i == 3){
-                            setTimeout(function(){
-                                $(".area_brand").find(".txt_area").stop().animate({
-                                    "opacity":"1"
-                                },{
-                                    duration:"100",
-                                    step:function(){
-                                        $(".area_brand").find(".txt_area").addClass("on");
-                                    }
-                                });
     
-                                $(".brand_wrap").stop().animate({
-                                    "opacity":"1"
-                                },{
-                                    duration:"100",
-                                    step:function(){
-                                        $(".brand_wrap").addClass("on");
-                                    }
-                                });
-                            },400);
-                        }
-    
-                        if(i == 4){
+                        if(i >= 4){
                             $rightSect.find(".scroll").css('opacity','0');
                             $rightSect.find($btnTop).stop().animate({
                                 "opacity":"1",
                                 "bottom":"60px"
                             },500,"swing");
-                        } else {
+    
+                        }else{
                             $rightSect.find(".scroll").css('opacity','1');
                             $rightSect.find($btnTop).stop().animate({
-                                "bottom":"-100%",
+                                "bottom":"0px",
                                 "opacity":"0"
                             },500,"swing");
                         }
@@ -626,19 +552,13 @@ thetastable = {
             }
 
             function topBtn(topI){
-                $btnTop.find("a").on("click",function(){
+                $btnTop.on("click",function(){
                     i = 0;
                     $mainWrap.stop().animate({"top": i},100,"linear");
 
                     mainMove(i);
                     sectAnimate(i);
                 })
-
-                if(!$sect.is(".active")){
-                    $rightSect.find($btnTop).stop().animate({
-                        "bottom":"-100%"
-                    },500,"swing");
-                }
             }
 
             function sectAnimate(i){
@@ -691,38 +611,17 @@ thetastable = {
                         $(".wrap").removeClass("black");
                     }
 
-                    if(i == 3){
-                        setTimeout(function(){
-                            $(".area_brand").find(".txt_area").stop().animate({
-                                "opacity":"1"
-                            },{
-                                duration:"100",
-                                step:function(){
-                                    $(".area_brand").find(".txt_area").addClass("on");
-                                }
-                            });
-
-                            $(".brand_wrap").stop().animate({
-                                "opacity":"1"
-                            },{
-                                duration:"100",
-                                step:function(){
-                                    $(".brand_wrap").addClass("on");
-                                }
-                            });
-                        },400);
-                    }
-
-                    if(i == 4){
+                    if(i >= 4){
                         $rightSect.find(".scroll").css('opacity','0');
                         $rightSect.find($btnTop).stop().animate({
                             "opacity":"1",
                             "bottom":"60px"
                         },500,"swing");
-                    } else {
+
+                    }else{
                         $rightSect.find(".scroll").css('opacity','1');
                         $rightSect.find($btnTop).stop().animate({
-                            "bottom":"-100%",
+                            "bottom":"0px",
                             "opacity":"0"
                         },500,"swing");
                     }
@@ -730,6 +629,8 @@ thetastable = {
             }
         }();
     }
+
+
 }
 
 thetastable.common();

@@ -326,7 +326,7 @@
         .btn_top {
             position: absolute;
             right: 36px;
-            bottom: -100%;
+            bottom: 0px;
             width: auto;
             opacity: 0;
             a {
@@ -771,7 +771,7 @@
     border-top: 1px solid #cccccc;
     .footer_inner {
         width: 100%;
-        padding: 65px 100px 65px 50px;
+        padding: 65px 50px;
         @include background("img_logo_b.png", 50px 52px, no-repeat);
         &::after {
             display: block;
@@ -781,11 +781,8 @@
     }
     .left {
         float: left;
-        width: 45%;
+        width: 50%;
         padding-left: 230px;
-        @include desktop {
-            padding-left: 200px;
-        }
         p {
             margin-bottom: 15px;
             font-size: 14px;
@@ -797,9 +794,9 @@
         }
     }
     .right {
-        float: left;
-        width: 55%;
-        padding-right: 50px;
+        float: right;
+        width: 50%;
+        padding-right: 80px;
     }
     .tel_wrap {
         margin: 0 -10px 35px -10px;
@@ -827,27 +824,16 @@
     .privasy_wrap {
         margin-bottom: 22px;
         text-align: right;
+        margin: 0 -10px;
         margin-bottom: 24px;
-        font-size: 0;
         li {
             display: inline-block;
             width: auto;
-            padding-left: 10px;
+            padding: 0 10px;
+            border-left: 1px solid #e0e0e0;
             vertical-align: middle;
             &:first-child {
-                position: relative;
-                padding-right: 10px;
-                padding-left: 0;
                 border-left: 0;
-                &::after {
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    width: 1px;
-                    height: 14px;
-                    background: #e0e0e0;
-                    content: "";
-                }
             }
         }
         a {
@@ -1026,7 +1012,9 @@
         }
         &_brand {
             //overflow: hidden;
-
+            // .txt_area {
+            //     margin: 0 0 50px 0;
+            // }
             // .inner {
             //     padding: 0 100px 0 5.2%;
             // }
@@ -1242,25 +1230,10 @@
         .indi_txt {
             color: #343434;
         }
-        .txt_area {
-            transform: translateY(50px);
-            opacity: 0;
-            &.on {
-                transition: 0.3s;
-                transform: translateY(0px);
-            }
-        }
-
         .brand_wrap {
             overflow: hidden;
             position: relative;
             width: 100%;
-            transform: translateY(50px);
-            opacity: 0;
-            &.on {
-                transition: 0.3s;
-                transform: translateY(0px);
-            }
         }
         .swiper-container {
             margin-bottom: 30px;
@@ -1457,15 +1430,13 @@
             justify-content: space-between;
             align-items: flex-start;
             padding: 100px 100px 0 100px;
-            // @include clearFix;
         }
-
         .cont {
             &.left {
                 position: relative;
-                // float: left;
                 width: calc(50% - 50px);
-                padding: 0 100px 0 0;
+                height: calc(100vh - 100px);
+                padding: 100px 100px 0 0;
                 &::after {
                     position: absolute;
                     top: 0;
@@ -1477,16 +1448,21 @@
                 }
             }
             &.right {
-                // float: left;
                 width: calc(50% + 50px);
-                // padding-top: 100px;
-                // padding: 100px 100px 0 100px;
-                @include flexBox;
                 flex-direction: column;
+                @include flexBox;
             }
         }
+        .flex_box {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%;
+        }
         .txt_area {
-            margin-bottom: 30px;
+            width: 100%;
+            margin: 0 0 30px 0;
             h2,
             p,
             em {
@@ -1497,6 +1473,7 @@
             }
         }
         .input_box {
+            width: 100%;
             ul {
                 margin-bottom: 25px;
                 font-size: 0;
@@ -1571,11 +1548,8 @@
             }
         }
         .inquiry_box {
-            &::after {
-                display: block;
-                clear: both;
-                content: "";
-            }
+            width: 100%;
+            @include clearFix;
             dl {
                 float: left;
                 width: auto;
@@ -1639,16 +1613,11 @@
         .right_cont {
             display: flex;
             align-items: center;
-            justify-content: center;
             position: relative;
             width: 100%;
             height: calc(50vh - 50px);
-            // padding: 0 0 0 100px;
-            &:last-child {
-                padding: 0 100px;
-            }
+            padding: 0 100px;
             .txt_area {
-                margin-top: 0;
                 p {
                     font-weight: 500;
                     font-size: 24px;
@@ -1658,6 +1627,7 @@
             }
         }
         .right_top {
+            flex-basis: 100%;
             &::after {
                 position: absolute;
                 bottom: 0;
