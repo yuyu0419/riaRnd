@@ -1,4 +1,3 @@
-
 var thetastable = thetastable || {};
 var $body = $("body"),
     $wrap = $(".wrap"),
@@ -20,7 +19,6 @@ var $body = $("body"),
 //     $("#footer").load("/thetastable/include/footer.html")    
 // });
     
-
 thetastable = {
     common : function(){
         // gnb 모션
@@ -72,7 +70,16 @@ thetastable = {
             $btnBurger.on("click",function(){
                 $wrap.toggleClass("open");
                 $("#allMenu").css("display","block");
-                // console.log($allList.find(".depth1").removeClass("on"))
+
+                if($wrap.is(".open") && $header.is(".on")){
+                    $header.removeClass("on");
+                    $depth2Wrap.stop().animate({
+                        "opacity":"0",
+                        "margin-top":"20px"
+                    },100);
+                    $depth2Wrap.css("display","none");
+                }
+
                 if(!$wrap.is(".open")){
                     setTimeout(function(){
                         $("#allMenu").css("display","none");
@@ -374,35 +381,18 @@ thetastable = {
                     
                     isWheel = false;
     
-                    // $mainWrap.stop().animate({"top" : -(sectInnerH * i) + "px"},100,"linear",function(){
-                    //     setTimeout(function(){
-                    //         isWheel = true;
-                    //     },700);
-                    // });
-
-                    //transform : "translateY("+ -(sectInnerH * i) +"px)"
-                    // $mainWrap.stop().animate({transform : "translateY("+ -(sectInnerH * i) +"px)"},100,"linear",function(){
-                    //     setTimeout(function(){
-                    //         isWheel = true;
-                    //     },700);
-                    // });
-                        $mainWrap.css(
-                            {transform : "translateY("+ -(sectInnerH * i) +"px)"}
-                        )
+                    $mainWrap.css(
+                        {transform : "translateY("+ -(sectInnerH * i) +"px)"}
+                    )
 
                     setTimeout(function(){
                         isWheel = true;
                     },700);
 
                     $header.removeClass("hidden");
-    
+
                     if(i == sectLng){
-                        // $mainWrap.stop().animate({"top" : -(sectInnerH * (i - 1)) + -(footH) + "px"},50,"linear",function(){
-                        //     setTimeout(function(){
-                        //         isWheel = true;
-                        //     },300);
-                        // });
-                        $mainWrap.css({transform : "translateY("+ -(sectInnerH * (i - 1)) + -(footH) +"px)"})
+                        $mainWrap.css({transform : "translateY("+ -((sectInnerH * (i - 1)) + (footH)) +"px)"})
                       
                         setTimeout(function(){
                             isWheel = true;

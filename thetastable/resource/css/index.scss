@@ -444,6 +444,10 @@
                 background: #f37321;
                 color: #fff !important;
             }
+
+            @include desktop {
+                padding: 40px 20px;
+            }
         }
         .depth2_wrap {
             display: none;
@@ -617,15 +621,17 @@
         }
         .all_gnb {
             position: absolute;
-            top: 50%;
+            top: 250px;
             left: 0px;
-            transform: translate(0, -50%);
             z-index: 1002;
             width: 100%;
             height: auto;
             > ul {
                 width: 850px;
                 margin: 0 auto;
+            }
+            @include desktop {
+                top: 200px;
             }
         }
         .depth_wrap {
@@ -668,6 +674,10 @@
             font-size: 48px;
             color: #343434 !important;
             text-transform: uppercase;
+
+            @include desktop {
+                font-size: 38px;
+            }
         }
         .depth2_wrap {
             float: right;
@@ -689,6 +699,10 @@
                 font-size: 20px;
                 color: #343434;
                 text-transform: uppercase;
+
+                @include desktop {
+                    font-size: 16px;
+                }
             }
         }
     }
@@ -853,10 +867,16 @@
             &:first-child {
                 padding-left: 0;
             }
+            @include desktop {
+                padding-left: 50px;
+            }
         }
         a {
             font-size: 18px;
             color: #393939;
+            @include desktop {
+                font-size: 15px;
+            }
         }
     }
 }
@@ -921,6 +941,7 @@
             opacity: 1;
         }
     }
+    overflow: hidden;
     position: relative;
     height: 100vh;
     .sect_cont {
@@ -944,12 +965,18 @@
     }
     .txt_area {
         margin: 50px 0;
+
         h2 {
             margin-bottom: 40px;
             font-weight: 300;
             font-size: 50px;
             text-align: center;
             color: #343434;
+
+            @include desktop {
+                margin-bottom: 30px;
+                font-size: 43px;
+            }
         }
         em {
             display: block;
@@ -1008,6 +1035,9 @@
         &_about {
             .txt_area {
                 margin: 0 0 100px 0;
+                @include desktop {
+                    margin: 0 0 70px 0;
+                }
             }
         }
         &_brand {
@@ -1166,6 +1196,9 @@
             h2 {
                 font-weight: 300;
                 color: #343434;
+                @include desktop {
+                    margin-bottom: 30px;
+                }
             }
             em {
                 display: block;
@@ -1446,6 +1479,9 @@
                     background: #f0f0f0;
                     content: "";
                 }
+                @include desktop {
+                    padding: 50px 100px 0 0;
+                }
             }
             &.right {
                 width: calc(50% + 50px);
@@ -1481,6 +1517,9 @@
             li {
                 padding: 25px 0;
                 border-bottom: 1px solid #f0f0f0;
+                @include desktop {
+                    padding: 20px 0;
+                }
             }
             label {
                 display: inline-block;
@@ -1623,6 +1662,9 @@
                     font-size: 24px;
                     color: #343434;
                     line-height: 1.5;
+                    @include desktop {
+                        font-size: 20px;
+                    }
                 }
             }
         }
@@ -1652,12 +1694,18 @@
                     position: relative;
                     padding: 25px 0;
                     border-bottom: 1px solid #e0e0e0;
+                    @include desktop {
+                        padding: 20px 0;
+                    }
                 }
                 a {
                     font-weight: 400;
                     font-size: 18px;
                     color: #343434;
 
+                    @include desktop {
+                        font-size: 16px;
+                    }
                     &::before {
                         position: absolute;
                         top: 50%;

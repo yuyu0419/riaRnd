@@ -23,17 +23,7 @@
 }
 
 @mixin desktop {
-    @media (min-width:#{$breakpoint-tablet} + 1) and (max-width:#{$breakpoint-desktop}) {
-        @content;
-    }
-}
-@mixin tablet {
-    @media (min-width:#{$breakpoint-mobile} + 1) and (max-width:#{$breakpoint-tablet}) {
-        @content;
-    }
-}
-@mixin mobile {
-    @media (min-width:all) and (max-width:#{$breakpoint-mobile}) {
+    @media (min-width:#{$innerSizeS}) and (max-width:#{$innerSizeM}) {
         @content;
     }
 }
