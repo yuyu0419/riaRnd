@@ -120,9 +120,6 @@ thetastable = {
                         },600,"linear");
                     }
                 })
-                // if(!$wrap.is(".open")){
-                //     $allList.find(".depth1").removeClass("on");
-                // }
             })
         }();
         // family site 마우스 엔터 모션
@@ -252,14 +249,11 @@ thetastable = {
                     $mainWrap.stop().animate({"top" : -(sectInnerH * (i - 1)) + -(footH) + "px"},50,"linear",function(){
                         setTimeout(function(){
                             isWheel = true;
-                        },300);
+                        },700);
                     });
-                    console.log(-(sectInnerH * (i - 1)) + -(footH))
                     $header.addClass("hidden");
                 }
-                
-                console.log(i, -(sectInnerH * (i - 1)),-(footH))
-                
+                                
                 topBtn(i);
                 sectAnimate(i);
             }
@@ -619,8 +613,6 @@ thetastable = {
             }
         }();
     }
-
-
 }
 
 thetastable.common();
